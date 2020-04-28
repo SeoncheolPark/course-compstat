@@ -368,8 +368,229 @@ summary {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#rcpp-패키지">Rcpp 패키지</a></li>
+<li><a href="#evalcpp-간단한-계산"><code>evalCpp</code>: 간단한 계산</a></li>
+<li><a href="#rcpp-사용법-cppfunction-r에서-바로-실행">Rcpp 사용법: <code>cppFunction</code> (R에서 바로 실행)</a></li>
+<li><a href="#rprintf-c-디버깅"><code>Rprintf()</code>: C++ 디버깅</a></li>
+<li><a href="#rcpp-사용법-sourcecpp-c-파일을-미리-작성해-놓고-r에서-따로-실행">Rcpp 사용법: <code>sourceCpp</code> (C++ 파일을 미리 작성해 놓고 R에서 따로 실행)</a><ul>
+<li><a href="#cpp-파일-작성-방법"><code>.cpp</code> 파일 작성 방법</a></li>
+</ul></li>
+<li><a href="#요약-r에서-.cpp-파일-실행-전략">요약: R에서 <code>.cpp</code> 파일 실행 전략</a></li>
+</ul>
+</div>
 
+<pre class="r"><code>#install.packages(&quot;Rcpp&quot;)
+library(Rcpp)</code></pre>
 <p>다음 <a href="http://people.duke.edu/~ccc14/sta-663-2018/notebooks/S12_CPP_Annotated.html">웹페이지</a> 에 있는 내용들을 구현해 볼 것.</p>
+<p>이 문서의 내용은 <a href="https://statkclee.github.io/parallel-r/r-perf-rcpp.html#1_rcpp_헬로월드_1">xwMOOC R 병렬 프로그래밍</a> 을 참고하였다.</p>
+<div id="rcpp-패키지" class="section level2">
+<h2>Rcpp 패키지</h2>
+<p><a href="https://lareale.tistory.com/303">다음 블로그</a> 에서는 Rcpp 패키지의 특징을 다음과 같이 적었다.</p>
+<ol style="list-style-type: decimal">
+<li><p>pointer나 SEXP를 사용하지 않고 데이터 연산 표현 가능 -&gt; 사용만 안하는 것이지 실제로는 SEXP 사용한다고 함</p></li>
+<li><p>64bit 정수 타입에 캐스팅 이슈가 있어 대형 프로젝트에서는 사용하지 않는 것이 좋을 것 같다고 함</p></li>
+</ol>
+</div>
+<div id="evalcpp-간단한-계산" class="section level2">
+<h2><code>evalCpp</code>: 간단한 계산</h2>
+<p>Evaluates a C++ expression. This creates a C++ function using <code>cppFunction</code> and calls it to get the result.</p>
+<pre class="r"><code>## 실수
+bmi_c_double &lt;- evalCpp( &quot;24.0&quot; )
+typeof(bmi_c_double)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<pre class="r"><code>## 정수
+bmi_c_int &lt;- evalCpp( &quot;24&quot; )
+typeof(bmi_c_int)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>## 자료형 변환
+bmi_double &lt;- evalCpp( &quot;(double) (24 + 1)&quot; )
+typeof(bmi_double)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<p>복잡한 C++ 코드가 아니라면 <code>evalCpp()</code> 함수 내부에 C++코드를 넣어 실행결과를 반환받을 수 있다. BMI 지수(비만도 계산)을 C++ 코드로 다음과 같이 작성할 수 있다. 단, 키는 cm가 아니라 m 단위로 넣어준다.</p>
+<p><span class="math display">\[\text{BMI} = \frac{\text{몸무게}}{\text{키}^2}\]</span></p>
+<pre class="r"><code>evalCpp( &quot;70 / (1.7 * 1.7)&quot; )</code></pre>
+<pre><code>## [1] 24.22145</code></pre>
+<p><code>evalCpp()</code> 함수는 C++ 코드 한줄을 작성해서 간단한 연산작업을 수행하는데 적합하다.</p>
+</div>
+<div id="rcpp-사용법-cppfunction-r에서-바로-실행" class="section level2">
+<h2>Rcpp 사용법: <code>cppFunction</code> (R에서 바로 실행)</h2>
+<p><code>cppFunction()</code> 함수는 이름 그대로 C++ 함수를 작성해서 R환경에서 불러 사용할 때 적합하다. 아래 코드는 앞서 작성한 BMI 비만도를 계산하는 계산 로직을 C++ 코드로 작성한 사례로 <code>calc_bmi()</code> 함수를 다른 R 함수 호출하는 것과 동일한 방식으로 불러 사용할 수 있다.</p>
+<pre class="r"><code>cppFunction(&quot;double calc_bmi(double weight, double height){
+                    double bmi = weight / (height * height) ;
+                    return bmi ;
+            }&quot; )
+
+calc_bmi(70, 1.7)</code></pre>
+<pre><code>## [1] 24.22145</code></pre>
+<p><code>verbose = TRUE, rebuild = TRUE</code>를 순차적으로 넣어주면 작성된 C++ 코드가 Rcpp의 도움으로 어떻게 내부적으로 구현되어 실행되는지 파악할 수 있다. 즉, 개발자가 자잘한 것까지 신경쓸 필요없이 개발 핵심 사항에 집중할 수 있도록 큰 도움을 주고 있다.</p>
+<pre class="r"><code>cppFunction(&quot;double calc_bmi(double weight, double height){
+                    double bmi = weight / (height * height) ;
+                    return bmi ;
+            }&quot;, verbose = TRUE, rebuild = TRUE )</code></pre>
+<pre><code>## 
+## Generated code for function definition: 
+## --------------------------------------------------------
+## 
+## #include &lt;Rcpp.h&gt;
+## 
+## using namespace Rcpp;
+## 
+## // [[Rcpp::export]]
+## double calc_bmi(double weight, double height){
+##                     double bmi = weight / (height * height) ;
+##                     return bmi ;
+##             }
+## 
+## Generated extern &quot;C&quot; functions 
+## --------------------------------------------------------
+## 
+## 
+## #include &lt;Rcpp.h&gt;
+## // calc_bmi
+## double calc_bmi(double weight, double height);
+## RcppExport SEXP sourceCpp_9_calc_bmi(SEXP weightSEXP, SEXP heightSEXP) {
+## BEGIN_RCPP
+##     Rcpp::RObject rcpp_result_gen;
+##     Rcpp::RNGScope rcpp_rngScope_gen;
+##     Rcpp::traits::input_parameter&lt; double &gt;::type weight(weightSEXP);
+##     Rcpp::traits::input_parameter&lt; double &gt;::type height(heightSEXP);
+##     rcpp_result_gen = Rcpp::wrap(calc_bmi(weight, height));
+##     return rcpp_result_gen;
+## END_RCPP
+## }
+## 
+## Generated R functions 
+## -------------------------------------------------------
+## 
+## `.sourceCpp_9_DLLInfo` &lt;- dyn.load(&#39;/private/var/folders/yx/xf5ftr015xv6tfm_q05c_6f40000gn/T/RtmpKXbfef/sourceCpp-x86_64-apple-darwin15.6.0-1.0.4.6/sourcecpp_1f5b3be809ff/sourceCpp_11.so&#39;)
+## 
+## calc_bmi &lt;- Rcpp:::sourceCppFunction(function(weight, height) {}, FALSE, `.sourceCpp_9_DLLInfo`, &#39;sourceCpp_9_calc_bmi&#39;)
+## 
+## rm(`.sourceCpp_9_DLLInfo`)
+## 
+## Building shared library
+## --------------------------------------------------------
+## 
+## DIR: /private/var/folders/yx/xf5ftr015xv6tfm_q05c_6f40000gn/T/RtmpKXbfef/sourceCpp-x86_64-apple-darwin15.6.0-1.0.4.6/sourcecpp_1f5b3be809ff
+## 
+## /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB --preclean -o &#39;sourceCpp_11.so&#39; &#39;file1f5b7142672.cpp&#39;</code></pre>
+</div>
+<div id="rprintf-c-디버깅" class="section level2">
+<h2><code>Rprintf()</code>: C++ 디버깅</h2>
+<p><code>Rprintf()</code> 함수를 사용해서 콘솔에 변수값을 출력함으로써 간단한 디버깅을 수행할 수 있다.</p>
+<pre class="r"><code>cppFunction(
+&#39;double calc_bmi(double weight, double height) {
+            // R콘솔에 입력값 체중과 키 출력
+            Rprintf(&quot;몸무게: %f \\n&quot;, weight) ;
+            Rprintf(&quot;키: %f \\n&quot;, height) ;
+            double bmi = weight / (height * height) ;
+            return bmi ;
+            }&#39;
+)
+calc_bmi(weight=70.0, height=1.7)</code></pre>
+<pre><code>## 몸무게: 70.000000 
+## 키: 1.700000</code></pre>
+<pre><code>## [1] 24.22145</code></pre>
+<p><code>check_bmi()</code> 함수와 같이 정상값을 벗어나는 경우 무리하게 BMI를 계산하는 대신 오류 메시지를 발생시켜서 동작을 중지시키거나, tryCatch를 사용해서 오류를 인정하고 다른 계속 프로그램 실행을 강제시킨다.</p>
+<pre class="r"><code>cppFunction(&#39;
+double check_bmi(double weight, double height) {
+
+      if(weight &lt; 50 | height &lt; 2.5) stop(&quot;사람이 아닙니다!!!&quot;) ;
+           
+      double bmi = weight / (height * height) ;
+      return bmi ;
+}&#39;)
+
+# 범위 밖 사례
+# check_bmi(40, 3)
+# Error in check_bmi(40, 3) : 사람이 아닙니다!!!
+  
+tryCatch( check_bmi(40, 3), error = function(e){
+    message(&quot;C++ 예외사항: &quot;, conditionMessage(e))
+})</code></pre>
+<pre><code>## C++ 예외사항: 사람이 아닙니다!!!</code></pre>
+</div>
+<div id="rcpp-사용법-sourcecpp-c-파일을-미리-작성해-놓고-r에서-따로-실행" class="section level2">
+<h2>Rcpp 사용법: <code>sourceCpp</code> (C++ 파일을 미리 작성해 놓고 R에서 따로 실행)</h2>
+<p><code>sourceCpp()</code>는 <code>.cpp</code> 파일을 미리 만들어놓고 불러서 사용하는 데 쓰는 함수이다.</p>
+<p>먼저 <code>bmi.cpp</code> 파일을 다음과 같이 구성한다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+double calc_bmi(int weight, double height){
+  double bmi = weight / (height * height) ;
+  return bmi ;
+}
+
+/*** R
+calc_bmi(70, 1.7)
+*/</code></pre>
+<p>다음과 같이 실행한다.</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/IntroCpp/bmi.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; calc_bmi(70, 1.7)
+## [1] 24.22145</code></pre>
+<div id="cpp-파일-작성-방법" class="section level3">
+<h3><code>.cpp</code> 파일 작성 방법</h3>
+<p><code>.cpp</code> 파일을 구성할 때 외부에 노출되는 함수와 그렇지 않는 내부 함수를 다음과 같이 나누어서 작성한다. 즉, <code>calc_bmi()</code> 함수는 BMI 값을 계산하고, 내부적으로 이 함수를 <code>print_bmi()</code> 함수에서 호출하여 비만값을 사람이 알기 쉬운 형태로 “저체중/정상/…/고도비만” 출력시킨다.</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/IntroCpp/print_bmi.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; print_bmi(70, 1.7)
+## [1] &quot;obesity, 비만 1 단계&quot;</code></pre>
+<p>여기서 <code>print_bmi.cpp</code> 파일 구성은 다음과 같다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+double calc_bmi(int weight, double height){
+  double bmi = weight / (height * height) ;
+  return bmi ;
+}
+
+// [[Rcpp::export]]
+std::string print_bmi(int weight, double height){
+  
+  double bmi;
+  std::string print_text; 
+  
+  bmi = calc_bmi(weight, height);
+  
+  if (bmi &lt; 18.5 ) {
+    print_text = &quot;underweight, 저체중&quot;;
+  } else if( (bmi &gt;= 18.5) &amp; (bmi &lt; 23) ) {
+    print_text =  &quot;normal, 정상&quot;;
+  } else if( (bmi &gt;= 23) &amp; (bmi &lt; 25) ){
+    print_text = &quot;obesity, 비만 1 단계&quot;;
+  } else if( (bmi &gt;= 25) &amp; (bmi &lt; 30) ){
+    print_text = &quot;obesity, 비만 2,3 단계&quot;;
+  } else {
+    print_text = &quot;obesity, 고도&quot;;
+  } 
+  return print_text;
+}
+
+/*** R
+print_bmi(70, 1.7)
+*/</code></pre>
+<p>이것을 보면 맨 위에서 보듯이 <code>Rcpp</code> 함수를 이용해 <code>.cpp</code> 파일을 만들 때 다음을 반드시 넣어야 한다.</p>
+<ul>
+<li><p><code>#include &lt;Rcpp.h&gt;</code></p></li>
+<li><p><code>using namespace Rcpp;</code></p></li>
+<li><p><code>// [[Rcpp::export]]</code></p></li>
+</ul>
+<p>이 세 가지는 반드시 넣어야 한다.</p>
+</div>
+</div>
+<div id="요약-r에서-.cpp-파일-실행-전략" class="section level2">
+<h2>요약: R에서 <code>.cpp</code> 파일 실행 전략</h2>
+<ol style="list-style-type: decimal">
+<li><p><code>evalCpp()</code>: 간단한 C++ 코드는 <code>evalCpp()</code> 함수로 감싸서 C++ 표현식을 처리</p></li>
+<li><p><code>cppFunction()</code>: 함수가 필요한 경우는 <code>cppFunction()</code> 함수로 감싸서 나중에 R에서 함수호출로 처리</p></li>
+<li><p><code>sourceCpp()</code>: 좀더 복잡한 C++ 코드는 별도 <code>.cpp</code> 확장자를 갖는 C++ 코드로 작성한 후 <code>sourceCpp()</code>로 불러 활용한다.</p></li>
+</ol>
+</div>
 
 
 

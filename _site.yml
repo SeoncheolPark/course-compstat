@@ -15,6 +15,10 @@ navbar:
           href: html/RandC.html
         - text: "R과 C++"
           href: html/RandCpp.html
+        - text: "R과 C++: inline 패키지"
+          href: html/Rinline.html  
+        - text: "R과 C++: 연습문제"
+          href: html/ex_Rcpp.html  
     - text: "Homework"
       href: hw.html
     - text: "Exam"

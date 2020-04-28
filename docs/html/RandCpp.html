@@ -368,15 +368,33 @@ summary {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#시작">시작</a></li>
+<li><a href="#먼저-해야할-일">먼저 해야할 일</a></li>
+<li><a href="#c과-함께-시작">C++과 함께 시작</a><ul>
+<li><a href="#no-inputs-scalar-output">No inputs, scalar output</a></li>
+<li><a href="#scalar-input-scalar-output">Scalar input, scalar output</a></li>
+<li><a href="#vector-input-scalar-output">Vector input, scalar output</a></li>
+<li><a href="#vector-input-vector-output">Vector input, vector output</a></li>
+</ul></li>
+<li><a href="#sourcecpp의-사용">sourceCpp의 사용</a></li>
+<li><a href="#다른-클래스들">다른 클래스들</a><ul>
+<li><a href="#리스트와-데이터-프레임">리스트와 데이터 프레임</a></li>
+<li><a href="#함수들">함수들</a></li>
+<li><a href="#attributes">Attributes</a></li>
+</ul></li>
+</ul>
+</div>
 
 <p><strong>참고문헌</strong></p>
 <ul>
-<li><p><a href="https://adv-r.hadley.nz/rcpp.html">Advancec R</a></p></li>
+<li><p><a href="https://adv-r.hadley.nz/rcpp.html">Advancec R</a> : 이 문서의 내용은 이 책 25장을 정리 한 것</p></li>
 <li><p><a href="https://lareale.tistory.com/303">R과 C연동 (Rcpp 패키지 사용, R 속도 개선)</a></p></li>
 <li><p><a href>Rcpp 웹사이트</a></p></li>
 </ul>
 <div id="시작" class="section level2">
-<h2><span class="header-section-number">0.1</span> 시작</h2>
+<h2>시작</h2>
 <p>R에서 C를 연동하는 방법은 다음과 같이 크게 3가지가 있다고 한다.</p>
 <ol style="list-style-type: decimal">
 <li><p>C함수: 간단하지만 제한적으로 사용 가능하며, R 메모리 상에서 연산을 하기 때문에 object는 포인터 연산자로 다뤄줘야 한다고 함.</p></li>
@@ -385,7 +403,7 @@ summary {
 </ol>
 </div>
 <div id="먼저-해야할-일" class="section level2">
-<h2><span class="header-section-number">0.2</span> 먼저 해야할 일</h2>
+<h2>먼저 해야할 일</h2>
 <p>가장 먼저 해야할 일은 <code>Rcpp</code> 패키지를 설치하고 불러오는 일이다.</p>
 <pre class="r"><code>#install.packages(&quot;Rcpp&quot;)
 library(Rcpp)</code></pre>
@@ -397,7 +415,7 @@ library(Rcpp)</code></pre>
 </ul>
 </div>
 <div id="c과-함께-시작" class="section level2">
-<h2><span class="header-section-number">0.3</span> C++과 함께 시작</h2>
+<h2>C++과 함께 시작</h2>
 <p><code>cppFunction()</code>이라는 것은 R에서 C++ 함수를 쓸 수 있게 해준다.</p>
 <pre class="r"><code>library(Rcpp)
 cppFunction(&#39;int add(int x, int y, int z) {
@@ -419,7 +437,7 @@ add(1, 2, 3)</code></pre>
 <li><p>Matrix input and vector output</p></li>
 </ul>
 <div id="no-inputs-scalar-output" class="section level3">
-<h3><span class="header-section-number">0.3.1</span> No inputs, scalar output</h3>
+<h3>No inputs, scalar output</h3>
 <p>가장 단순한 예제는 입력을 받지 않고 그냥 어떤 값을 출력하는 경우가 되겠다.</p>
 <pre class="r"><code>one &lt;- function() 1L</code></pre>
 <p>이것에 대응되는 C++ 함수는</p>
@@ -440,7 +458,7 @@ add(1, 2, 3)</code></pre>
 </ul>
 </div>
 <div id="scalar-input-scalar-output" class="section level3">
-<h3><span class="header-section-number">0.3.2</span> Scalar input, scalar output</h3>
+<h3>Scalar input, scalar output</h3>
 <p>다음 함수는 스칼라 버전의 <code>sign()</code> 함수이다.</p>
 <pre class="r"><code>signR &lt;- function(x) {
   if (x &gt; 0) {
@@ -468,7 +486,7 @@ cppFunction(&#39;int signC(int x) {
 </ul>
 </div>
 <div id="vector-input-scalar-output" class="section level3">
-<h3><span class="header-section-number">0.3.3</span> Vector input, scalar output</h3>
+<h3>Vector input, scalar output</h3>
 <p>R과 C++사이에 큰 차이점 중 하나는 loop의 cost가 C++에서 낮다는 것이다. For example, we could implement the <code>sum</code> function in R using a loop. If you’ve been programming in R a while, you’ll probably have a visceral reaction to this function!</p>
 <pre class="r"><code>sumR &lt;- function(x) {
   total &lt;- 0
@@ -504,12 +522,12 @@ bench::mark(
 <pre><code>## # A tibble: 3 x 6
 ##   expression      min   median `itr/sec` mem_alloc `gc/sec`
 ##   &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-## 1 sum(x)       1.32µs   1.47µs   660579.        0B        0
-## 2 sumC(x)      2.56µs   4.66µs   211597.    2.49KB        0
-## 3 sumR(x)      28.5µs  43.71µs    24596.    3.96MB        0</code></pre>
+## 1 sum(x)        878ns  946.5ns   855454.        0B     0   
+## 2 sumC(x)      2.14µs    3.7µs   243751.    2.49KB     0   
+## 3 sumR(x)     25.66µs   29.7µs    30993.  187.22KB     3.10</code></pre>
 </div>
 <div id="vector-input-vector-output" class="section level3">
-<h3><span class="header-section-number">0.3.4</span> Vector input, vector output</h3>
+<h3>Vector input, vector output</h3>
 <p>이번에는 어떤 value와 벡터 사이의 유클리드 거리를 구하는 함수를 만들자.</p>
 <pre class="r"><code>pdistR &lt;- function(x, ys) {
   sqrt((x - ys) ^ 2)
@@ -538,13 +556,13 @@ bench::mark(
 <pre><code>## # A tibble: 2 x 6
 ##   expression          min   median `itr/sec` mem_alloc `gc/sec`
 ##   &lt;bch:expr&gt;     &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-## 1 pdistR(0.5, y)   3.52ms   4.55ms      208.    7.63MB     81.2
-## 2 pdistC(0.5, y)   1.37ms   1.66ms      516.    7.63MB    175.</code></pre>
+## 1 pdistR(0.5, y)   3.24ms   3.96ms      238.    7.63MB     94.5
+## 2 pdistC(0.5, y)   1.23ms   1.73ms      529.    7.63MB    176.</code></pre>
 <p>The reason why the C++ function is faster is subtle, and relates to memory management. The R version needs to create an intermediate vector the same length as <code>y (x - ys)</code>, and allocating memory is an expensive operation. The C++ function avoids this overhead because it uses an intermediate scalar.</p>
 </div>
 </div>
 <div id="sourcecpp의-사용" class="section level2">
-<h2><span class="header-section-number">0.4</span> sourceCpp의 사용</h2>
+<h2>sourceCpp의 사용</h2>
 <p>지금까지는 <code>cppFunction()</code> 함수를 이용해 inline C++ 작성 방법을 사용하였다. 그러나 보통은 C++ 코드를 한 파일에 불러놓고 R에서 <code>sourceCpp()</code>의 형태로 불러와서 사용하는 것이 더 편할 것이다. This lets you take advantage of text editor support for C++ files (e.g., syntax highlighting) as well as making it easier to identify the line numbers in compilation errors.</p>
 <p>Your stand-alone C++ file should have extension <code>.cpp</code>, and needs to start with:</p>
 <pre class="r"><code>#include &lt;Rcpp.h&gt;
@@ -587,12 +605,97 @@ bench::mark(
 ## 
 ## &gt; bench::mark(mean(x), meanC(x))
 ## # A tibble: 2 x 13
-##   expression   min median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
-##   &lt;bch:expr&gt; &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
-## 1 mean(x)    146µs  212µs     4984.        0B        0  2492     0      500ms
-## 2 meanC(x)    97µs  142µs     7494.    2.49KB        0  3746     0      500ms
+##   expression     min  median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
+##   &lt;bch:expr&gt; &lt;bch:t&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
+## 1 mean(x)    139.2µs 149.8µs     5920.   22.73KB        0  2960     0      500ms
+## 2 meanC(x)    88.4µs  97.2µs     9322.    2.49KB        0  4660     0      500ms
 ## # … with 4 more variables: result &lt;list&gt;, memory &lt;list&gt;, time &lt;list&gt;, gc &lt;list&gt;</code></pre>
 <p>For the remainder of this chapter C++ code will be presented stand-alone rather than wrapped in a call to <code>cppFunction</code>. If you want to try compiling and/or modifying the examples you should paste them into a C++ source file that includes the elements described above. This is easy to do in RMarkdown: all you need to do is specify <code>engine = &quot;Rcpp&quot;</code>.</p>
+</div>
+<div id="다른-클래스들" class="section level2">
+<h2>다른 클래스들</h2>
+<p>지금까지</p>
+<ul>
+<li><p><code>IntegerVector</code>: <code>int</code>의 벡터 클래스</p></li>
+<li><p><code>NumericVector</code>: <code>double</code>의 벡터 클래스</p></li>
+<li><p><code>LogicalVector</code>: <code>bool</code>의 벡터 클래스</p></li>
+<li><p><code>CharacterVector</code>: <code>string</code>의 벡터 클래스</p></li>
+</ul>
+<p>에 대해 살펴보았다. Rcpp는 또한 <code>list</code>, <code>data frame</code>, <code>function</code>, <code>attribute</code>에 대한 wrapper 함수를 제공한다.</p>
+<div id="리스트와-데이터-프레임" class="section level3">
+<h3>리스트와 데이터 프레임</h3>
+<p>S3 오브젝트 <code>lm()</code> 함수의 결과물은 리스트로 되어있다. 다음은 <code>lm()</code> 오브젝트를 받아 residual의 평균을 계산해 출력하는 함수다. <code>.inherits()</code>, <code>stop()</code> 함수는 인풋이 실제로 linear model인지 체크하는 함수다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+double mpe(List mod) {
+  if (!mod.inherits(&quot;lm&quot;)) stop(&quot;Input must be a linear model&quot;);
+
+  NumericVector resid = as&lt;NumericVector&gt;(mod[&quot;residuals&quot;]);
+  NumericVector fitted = as&lt;NumericVector&gt;(mod[&quot;fitted.values&quot;]);
+
+  int n = resid.size();
+  double err = 0;
+  for(int i = 0; i &lt; n; ++i) {
+    err += resid[i] / (fitted[i] + resid[i]);
+  }
+  return err / n;
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/RandCpp/lm.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; mod &lt;- lm(mpg ~ wt, data = mtcars)
+## 
+## &gt; mpe(mod)
+## [1] -0.01541615</code></pre>
+</div>
+<div id="함수들" class="section level3">
+<h3>함수들</h3>
+<p>R 함수 또한 <code>Function</code>으로 받아서 쓸 수 있다. The only challenge is that we don’t know what type of output the function will return, so we use the catchall type <code>RObject</code>.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+RObject callWithOne(Function f) {
+  return f(1);
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/RandCpp/callWithOne.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; callWithOne(function(x) x + 1)
+## [1] 2
+## 
+## &gt; callWithOne(paste)
+## [1] &quot;1&quot;</code></pre>
+</div>
+<div id="attributes" class="section level3">
+<h3>Attributes</h3>
+<p>All R objects have attributes, which can be queried and modified with <code>.attr()</code>. Rcpp also provides <code>.names()</code> as an alias for the name attribute. The following code snippet illustrates these methods. Note the use of <code>::create()</code>, a class method. This allows you to create an R vector from C++ scalar values:</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+NumericVector attribs() {
+  NumericVector out = NumericVector::create(1, 2, 3);
+
+  out.names() = CharacterVector::create(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);
+  out.attr(&quot;my-attr&quot;) = &quot;my-value&quot;;
+  out.attr(&quot;class&quot;) = &quot;my-class&quot;;
+
+  return out;
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/RandCpp/attribs.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; attribs()
+## a b c 
+## 1 2 3 
+## attr(,&quot;my-attr&quot;)
+## [1] &quot;my-value&quot;
+## attr(,&quot;class&quot;)
+## [1] &quot;my-class&quot;</code></pre>
+</div>
 </div>
 
 
