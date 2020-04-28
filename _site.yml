@@ -1,0 +1,24 @@
+name: "Computational Statistics"
+output_dir: "docs"
+navbar:
+  title: "Fake Statistics"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Syllabus"
+      href: syllpdf.pdf
+    - text: "Lecture"
+      menu:
+        - text: "C++ 예제"
+          href: html/IntroCpp.html
+        - text: "R과 C"
+          href: html/RandC.html
+        - text: "R과 C++"
+          href: html/RandCpp.html
+    - text: "Homework"
+      href: hw.html
+    - text: "Exam"
+      href: exam.html
+  right:
+    - icon: fa-home
+      href: https://seoncheolpark.github.io
