@@ -19,6 +19,18 @@ navbar:
           href: html/Rinline.html  
         - text: "R과 C++: 연습문제"
           href: html/ex_Rcpp.html  
+        - text: "R과 C++: 행렬계산"
+          href: html/ex_Rcppmatrixcompute.html  
+        - text: "R과 C++: 포인터를 이용한 행렬계산"
+          href: html/ex_Rcppmatrixcomputepointer.html  
+        - text: "R과 C++: 최소자승법"
+          href: html/ex_Rcppleastsquare.html  
+        - text: "R과 C++: 붓스트랩 최소자승법 표준오차"
+          href: html/ex_Rcppleastsquarebootstrap.html  
+        - text: "R과 C++: 가능도 계산과 MCMC"
+          href: html/ex_Rcpplikelihood.html  
+        - text: "R과 C++: C++의 병렬계산"
+          href: html/ex_Rcppparallel.html  
     - text: "Homework"
       href: hw.html
     - text: "Exam"
