@@ -9,7 +9,7 @@ navbar:
       href: syllpdf.pdf
     - text: "Lecture"
       menu:
-        - text: "C++ 예제"
+        - text: "R에서 C++코딩: 인트로"
           href: html/IntroCpp.html
         - text: "R과 C"
           href: html/RandC.html

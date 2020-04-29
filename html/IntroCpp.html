@@ -378,13 +378,25 @@ summary {
 <li><a href="#cpp-파일-작성-방법"><code>.cpp</code> 파일 작성 방법</a></li>
 </ul></li>
 <li><a href="#요약-r에서-.cpp-파일-실행-전략">요약: R에서 <code>.cpp</code> 파일 실행 전략</a></li>
+<li><a href="#cpp-파일-작성-시-다른-.cpp-파일-호출해보기"><code>.cpp</code> 파일 작성 시 다른 <code>.cpp</code> 파일 호출해보기</a></li>
+<li><a href="#integrate-fortran-c-with-r">Integrate Fortran, C++ with R</a></li>
+<li><a href="#헤더-파일에서-와-의-차이">헤더 파일에서 <code>&lt; &gt;</code>와 <code>&quot; &quot;</code>의 차이</a></li>
+<li><a href="#rcpp로-패키지-만들기"><code>Rcpp</code>로 패키지 만들기</a></li>
 </ul>
 </div>
 
 <pre class="r"><code>#install.packages(&quot;Rcpp&quot;)
 library(Rcpp)</code></pre>
-<p>다음 <a href="http://people.duke.edu/~ccc14/sta-663-2018/notebooks/S12_CPP_Annotated.html">웹페이지</a> 에 있는 내용들을 구현해 볼 것.</p>
-<p>이 문서의 내용은 <a href="https://statkclee.github.io/parallel-r/r-perf-rcpp.html#1_rcpp_헬로월드_1">xwMOOC R 병렬 프로그래밍</a> 을 참고하였다.</p>
+<ul>
+<li><p>다음 <a href="http://people.duke.edu/~ccc14/sta-663-2018/notebooks/S12_CPP_Annotated.html">웹페이지</a> 에 있는 내용들을 구현해 볼 것.</p></li>
+<li><p>이 문서의 내용은 <a href="https://statkclee.github.io/parallel-r/r-perf-rcpp.html#1_rcpp_헬로월드_1">xwMOOC R 병렬 프로그래밍</a> 을 참고하였다.</p></li>
+<li><p><a href="https://colinfay.me/writing-r-extensions/the-r-api-entry-points-for-c-code.html">Writing R extensions, C part</a></p></li>
+<li><p><a href="http://adv-r.had.co.nz/C-interface.html">R’s C Interface</a></p></li>
+<li><p><a href="https://adv-r.hadley.nz/rcpp.html#rcpp-na">Rewriting R code in C++</a></p></li>
+<li><p><a href="https://advanced-r-solutions.rbind.io/rewriting-r-code-in-c.html">Rewriting R code in C++, solution</a></p></li>
+<li><p><a href="http://dirk.eddelbuettel.com/code/rcpp/Rcpp-modules.pdf">Exposing C++ functions and classes with Rcpp modules</a></p></li>
+<li><p><a href="https://teuder.github.io/rcpp4everyone_en/">R for everyone</a></p></li>
+</ul>
 <div id="rcpp-패키지" class="section level2">
 <h2>Rcpp 패키지</h2>
 <p><a href="https://lareale.tistory.com/303">다음 블로그</a> 에서는 Rcpp 패키지의 특징을 다음과 같이 적었다.</p>
@@ -464,7 +476,7 @@ calc_bmi(70, 1.7)</code></pre>
 ## Generated R functions 
 ## -------------------------------------------------------
 ## 
-## `.sourceCpp_9_DLLInfo` &lt;- dyn.load(&#39;/private/var/folders/yx/xf5ftr015xv6tfm_q05c_6f40000gn/T/RtmpKXbfef/sourceCpp-x86_64-apple-darwin15.6.0-1.0.4.6/sourcecpp_1f5b3be809ff/sourceCpp_11.so&#39;)
+## `.sourceCpp_9_DLLInfo` &lt;- dyn.load(&#39;/private/var/folders/yx/xf5ftr015xv6tfm_q05c_6f40000gn/T/RtmpblkTMo/sourceCpp-x86_64-apple-darwin15.6.0-1.0.4.6/sourcecpp_59a64863d82e/sourceCpp_11.so&#39;)
 ## 
 ## calc_bmi &lt;- Rcpp:::sourceCppFunction(function(weight, height) {}, FALSE, `.sourceCpp_9_DLLInfo`, &#39;sourceCpp_9_calc_bmi&#39;)
 ## 
@@ -473,9 +485,9 @@ calc_bmi(70, 1.7)</code></pre>
 ## Building shared library
 ## --------------------------------------------------------
 ## 
-## DIR: /private/var/folders/yx/xf5ftr015xv6tfm_q05c_6f40000gn/T/RtmpKXbfef/sourceCpp-x86_64-apple-darwin15.6.0-1.0.4.6/sourcecpp_1f5b3be809ff
+## DIR: /private/var/folders/yx/xf5ftr015xv6tfm_q05c_6f40000gn/T/RtmpblkTMo/sourceCpp-x86_64-apple-darwin15.6.0-1.0.4.6/sourcecpp_59a64863d82e
 ## 
-## /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB --preclean -o &#39;sourceCpp_11.so&#39; &#39;file1f5b7142672.cpp&#39;</code></pre>
+## /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB --preclean -o &#39;sourceCpp_11.so&#39; &#39;file59a67d4eebef.cpp&#39;</code></pre>
 </div>
 <div id="rprintf-c-디버깅" class="section level2">
 <h2><code>Rprintf()</code>: C++ 디버깅</h2>
@@ -590,6 +602,43 @@ print_bmi(70, 1.7)
 <li><p><code>cppFunction()</code>: 함수가 필요한 경우는 <code>cppFunction()</code> 함수로 감싸서 나중에 R에서 함수호출로 처리</p></li>
 <li><p><code>sourceCpp()</code>: 좀더 복잡한 C++ 코드는 별도 <code>.cpp</code> 확장자를 갖는 C++ 코드로 작성한 후 <code>sourceCpp()</code>로 불러 활용한다.</p></li>
 </ol>
+</div>
+<div id="cpp-파일-작성-시-다른-.cpp-파일-호출해보기" class="section level2">
+<h2><code>.cpp</code> 파일 작성 시 다른 <code>.cpp</code> 파일 호출해보기</h2>
+<p>그냥 한 <code>.cpp</code> 파일에 여러 개의 함수를 정의하는 방법이 간단하다. 항상 <code>// [[Rcpp::export]]</code> 를 붙여야 한다?</p>
+<p><a href="https://stackoverflow.com/questions/31486731/rcpp-compile-a-c-file-with-multiple-functions">https://stackoverflow.com/questions/31486731/rcpp-compile-a-c-file-with-multiple-functions</a></p>
+<p>여러 방법들을 실행해봤으나, R package를 하나 만드는 것이 정신건강에 좋다.</p>
+<ul>
+<li><p><a href="https://stackoverflow.com/questions/47886664/rcpp-error-in-calling-a-c-function-from-another-c-function">Rcpp: error in calling a c++ function from another c++ function</a></p></li>
+<li><p><a href="https://stackoverflow.com/questions/43819824/compiling-multiple-source-files-in-rcpp/43820385#43820385">Compiling multiple source files in Rcpp</a></p></li>
+<li><p><a href="https://stackoverflow.com/questions/52264383/error-when-i-call-cpp-function-from-another-cpp-file">Error when I call cpp function from another .cpp file</a></p></li>
+</ul>
+<p>마지막 질문의 답변에서 R 패키지 만드는 방법을 간단하게 요약해 놓았다.</p>
+<ol style="list-style-type: decimal">
+<li><p>From R, run <code>Rcpp::Rcpp.package.skeleton(&quot;SOanswer&quot;, example_code = FALSE)</code></p></li>
+<li><p>Delete the file <code>Read-and-delte-me</code>.</p></li>
+<li><p>Add the C++ files from your original post into the <code>src/</code> folder (with only one minor edit – changing the brackets(<code>&lt;&gt;</code>) around <code>f.h</code> in <code>g.cpp</code> to quotes (<code>&quot;&quot;</code>)).</p></li>
+<li><p>From R, run <code>Rcpp::compileAttributes(&quot;SOanswer/&quot;)</code> and <code>devtools::install(&quot;SOanswer/&quot;)</code></p></li>
+</ol>
+</div>
+<div id="integrate-fortran-c-with-r" class="section level2">
+<h2>Integrate Fortran, C++ with R</h2>
+<p><a href="https://stackoverflow.com/questions/31396802/integrate-fortran-c-with-r/52136973#52136973">다음 질문</a> 참고</p>
+<p><a href="http://users.stat.umn.edu/~geyer/rc/">다음 페이지</a> 참조</p>
+<ul>
+<li><p><code>foo</code>, which illustrates calling C or Fortran from R and also using the R random number generation system in such C or Fortran code.</p></li>
+<li><p><code>bar</code>, which illustrates turning formulas into model matrices in regression-like packages.</p></li>
+<li><p><code>mat</code>, which illustrates using numerical linear algebra (BLAS or LAPACK) functions in C called from R.</p></li>
+<li><p><code>qux</code>, which illustrates calling R from C called from R (the way the R functions integrate and nlm and optim do).</p></li>
+</ul>
+</div>
+<div id="헤더-파일에서-와-의-차이" class="section level2">
+<h2>헤더 파일에서 <code>&lt; &gt;</code>와 <code>&quot; &quot;</code>의 차이</h2>
+<p><a href="https://github.com/r-pkg-examples/rcpp-headers-src">다음 문서</a> 참조.</p>
+</div>
+<div id="rcpp로-패키지-만들기" class="section level2">
+<h2><code>Rcpp</code>로 패키지 만들기</h2>
+<p><a href="https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-package.pdf">Writing a package that uses Rcpp</a> 참고</p>
 </div>
 
 

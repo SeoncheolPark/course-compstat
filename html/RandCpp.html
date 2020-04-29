@@ -384,6 +384,9 @@ summary {
 <li><a href="#함수들">함수들</a></li>
 <li><a href="#attributes">Attributes</a></li>
 </ul></li>
+<li><a href="#missing-values">Missing values</a><ul>
+<li><a href="#scalars">Scalars</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -607,8 +610,8 @@ bench::mark(
 ## # A tibble: 2 x 13
 ##   expression     min  median `itr/sec` mem_alloc `gc/sec` n_itr  n_gc total_time
 ##   &lt;bch:expr&gt; &lt;bch:t&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;   &lt;bch:tm&gt;
-## 1 mean(x)    139.2µs 149.8µs     5920.   22.73KB        0  2960     0      500ms
-## 2 meanC(x)    88.4µs  97.2µs     9322.    2.49KB        0  4660     0      500ms
+## 1 mean(x)      133µs 143.7µs     6493.   22.73KB        0  3246     0      500ms
+## 2 meanC(x)    88.5µs  94.6µs     9614.    2.49KB        0  4807     0      500ms
 ## # … with 4 more variables: result &lt;list&gt;, memory &lt;list&gt;, time &lt;list&gt;, gc &lt;list&gt;</code></pre>
 <p>For the remainder of this chapter C++ code will be presented stand-alone rather than wrapped in a call to <code>cppFunction</code>. If you want to try compiling and/or modifying the examples you should paste them into a C++ source file that includes the elements described above. This is easy to do in RMarkdown: all you need to do is specify <code>engine = &quot;Rcpp&quot;</code>.</p>
 </div>
@@ -695,6 +698,118 @@ NumericVector attribs() {
 ## [1] &quot;my-value&quot;
 ## attr(,&quot;class&quot;)
 ## [1] &quot;my-class&quot;</code></pre>
+</div>
+</div>
+<div id="missing-values" class="section level2">
+<h2>Missing values</h2>
+<p>두 가지 점을 먼저 알아야 한다.</p>
+<ul>
+<li><p>How R’s missing values behave in C++’s scalars (e.g., <code>double</code>).</p></li>
+<li><p>How to get and set missing values in vectors (e.g., <code>NumericVector</code>).</p></li>
+</ul>
+<div id="scalars" class="section level3">
+<h3>Scalars</h3>
+<p>The following code explores what happens when you take one of R’s missing values, coerce it into a scalar, and then coerce back to an R vector. Note that this kind of experimentation is a useful way to figure out what any operation does.</p>
+<p><code>scalar_missings.cpp</code>라는 함수를 다음과 같이 작성한다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List scalar_missings() {
+  int int_s = NA_INTEGER;
+  String chr_s = NA_STRING;
+  bool lgl_s = NA_LOGICAL;
+  double num_s = NA_REAL;
+
+  return List::create(int_s, chr_s, lgl_s, num_s);
+}</code></pre>
+<p>결과를 실행하면 다음과 같다.</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/RandCpp/scalar_missings.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; str(scalar_missings())
+## List of 4
+##  $ : int NA
+##  $ : chr NA
+##  $ : logi TRUE
+##  $ : num NA</code></pre>
+<p>결과는 꽤 희망적인데, <code>bool</code>인 경우를 제외한 나머지는 missing value들이 보존됨을 확인할 수 있다. 그러나 자세히 들여다보면 그렇게 직관적이지는 않다.</p>
+<div id="integers" class="section level4">
+<h4>Integers</h4>
+<p>정수일 경우에 결측값은 가장 작은 정수로써 저장된다. 우리가 아무것도 안하면 계속 보존이 된다. 그러나 예를 들어서</p>
+<pre class="r"><code>evalCpp(&#39;NA_INTEGER + 1&#39;)</code></pre>
+<pre><code>## [1] -2147483647</code></pre>
+<p>과 같은 연산을 해버리면 숫자가 튀어나오게 된다.</p>
+<p>따라서 정수의 missing value를 다루려면</p>
+<ul>
+<li><p>길이 1인 <code>IntegerVector</code>를 사용하거나</p></li>
+<li><p>코드 작성 때 매우 조심해야 한다.</p></li>
+</ul>
+</div>
+<div id="doubles" class="section level4">
+<h4>Doubles</h4>
+<p><code>double</code>을 쓸 때에는 missing value를 무시한 채로 제거해 버릴 수도 있도 <code>NaN</code>으로 취급할 수도 있다. This is because R’s NA is a special type of IEEE 754 floating point number NaN. So any logical expression that involves a NaN (or in C++, NAN) always evaluates as FALSE:</p>
+<pre class="r"><code>evalCpp(&quot;NAN == 1&quot;)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>evalCpp(&quot;NAN &lt; 1&quot;)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>evalCpp(&quot;NAN &gt; 1&quot;)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>evalCpp(&quot;NAN == NAN&quot;)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>그러나 <code>double</code>과 <code>Boolean</code>을 조합해서 사용할 때에는 조심해야 한다.</p>
+<pre class="r"><code>evalCpp(&quot;NAN &amp;&amp; TRUE&quot;)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>evalCpp(&quot;NAN || FALSE&quot;)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>However, in numeric contexts NaNs will propagate NAs:</p>
+<pre class="r"><code>evalCpp(&quot;NAN + 1&quot;)</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<pre class="r"><code>evalCpp(&quot;NAN - 1&quot;)</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<pre class="r"><code>evalCpp(&quot;NAN / 1&quot;)</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<pre class="r"><code>evalCpp(&quot;NAN * 1&quot;)</code></pre>
+<pre><code>## [1] NaN</code></pre>
+</div>
+<div id="stings" class="section level4">
+<h4>Stings</h4>
+<p><code>String</code> is a scalar string class introduced by Rcpp, so it knows how to deal with missing values.</p>
+</div>
+<div id="boolean" class="section level4">
+<h4>Boolean</h4>
+<p>C++의 <code>bool</code>은 <code>true</code> 또는 <code>false</code> 두 개만을 갖지만, R에서의 logical vector는 <code>TRUE</code>, <code>FALSE</code>, <code>NA</code> 세 개를 갖는다. If you coerce a length 1 logical vector, make sure it doesn’t contain any missing values; otherwise they will be converted to TRUE. An easy fix is to use int instead, as this can represent TRUE, FALSE, and NA.</p>
+</div>
+<div id="vectors" class="section level4">
+<h4>Vectors</h4>
+<p>With vectors, you need to use a missing value specific to the type of vector,</p>
+<ul>
+<li><p><code>NA_REAL</code></p></li>
+<li><p><code>NA_INTEGER</code></p></li>
+<li><p><code>NA_LOGICAL</code></p></li>
+<li><p><code>NA_STRING</code>:</p></li>
+</ul>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List missing_sampler() {
+  return List::create(
+    NumericVector::create(NA_REAL),
+    IntegerVector::create(NA_INTEGER),
+    LogicalVector::create(NA_LOGICAL),
+    CharacterVector::create(NA_STRING)
+  );
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/RandCpp/missing_sampler.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; str(missing_sampler())
+## List of 4
+##  $ : num NA
+##  $ : int NA
+##  $ : logi NA
+##  $ : chr NA</code></pre>
+</div>
 </div>
 </div>
 

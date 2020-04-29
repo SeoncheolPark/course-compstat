@@ -370,14 +370,62 @@ summary {
 
 <div id="TOC">
 <ul>
-<li><a href="#예제-피보나치-수열-계산">예제: 피보나치 수열 계산</a></li>
+<li><a href="#단순-연산-예제">단순 연산 예제</a><ul>
+<li><a href="#피보나치-수열-계산">피보나치 수열 계산</a></li>
+</ul></li>
+<li><a href="#단순-통계량-예제-missing-없을-때">단순 통계량 예제 (missing 없을 때)</a><ul>
+<li><a href="#평균-계산-mean">평균 계산 (<code>mean()</code>)</a></li>
+<li><a href="#누적합-cumsum-계산">누적합 (<code>cumsum()</code>) 계산</a></li>
+<li><a href="#어떤-logical-vector의-적어도-한-개의-원소가-true인지-판단-any">어떤 logical vector의 적어도 한 개의 원소가 <code>TRUE</code>인지 판단 (<code>any()</code>)</a></li>
+<li><a href="#logical-true를-만족하는-위치를-반환하는-함수-position">logical <code>TRUE</code>를 만족하는 위치를 반환하는 함수 (<code>Position()</code>)</a></li>
+<li><a href="#벡터-원소별로-최솟값-반환-pmin">벡터 원소별로 최솟값 반환 (<code>pmin()</code>)</a></li>
+<li><a href="#input의-모든-값들이-true인지-판단-all">input의 모든 값들이 <code>TRUE</code>인지 판단 (<code>all()</code>)</a></li>
+<li><a href="#벡터-원소-순서대로-곱하는-함수-cumprod">벡터 원소 순서대로 곱하는 함수 (<code>cumprod()</code>)</a></li>
+<li><a href="#벡터-n번째-항까지의-최솟값을-차례로-반환하는-함수-cummin">벡터 n번째 항까지의 최솟값을 차례로 반환하는 함수 (<code>cummin()</code>)</a></li>
+<li><a href="#벡터-n번째-항까지의-최댓값을-차례로-반환하는-함수-cummax">벡터 n번째 항까지의 최댓값을 차례로 반환하는 함수 (<code>cummax()</code>)</a></li>
+<li><a href="#lag-1-차이-계산-함수">Lag 1 차이 계산 함수</a></li>
+<li><a href="#차이-계산-함수-임의의-lag-가능-diff">차이 계산 함수, 임의의 lag 가능 (<code>diff()</code>)</a></li>
+<li><a href="#범위-계산-함수-range">범위 계산 함수 (<code>range()</code>)</a></li>
+<li><a href="#분산-계산-var">분산 계산 (<code>var()</code>)</a></li>
+</ul></li>
+<li><a href="#단순-통계량-예제-missing-있을-때">단순 통계량 예제 (missing 있을 때)</a><ul>
+<li><a href="#최솟값-계산-함수-min">최솟값 계산 함수 (<code>min()</code>)</a></li>
+<li><a href="#최댓값-계산-함수-max">최댓값 계산 함수 (<code>max()</code>)</a></li>
+<li><a href="#범위-계산-함수-range-1">범위 계산 함수 (<code>range()</code>)</a></li>
+<li><a href="#평균-계산-함수-mean">평균 계산 함수 (<code>mean()</code>)</a></li>
+<li><a href="#분산-계산-함수-varc">분산 계산 함수 (<code>varC()</code>)</a></li>
+<li><a href="#누적-합-함수-cumsum">누적 합 함수 (<code>cumsum()</code>)</a></li>
+<li><a href="#어떤-logical-vector의-적어도-한-개의-원소가-true인지-판단-any-1">어떤 logical vector의 적어도 한 개의 원소가 <code>TRUE</code>인지 판단 (<code>any()</code>)</a></li>
+<li><a href="#logical-true를-만족하는-위치를-반환하는-함수-position-1">logical <code>TRUE</code>를 만족하는 위치를 반환하는 함수 (<code>Position()</code>)</a></li>
+<li><a href="#벡터-원소별로-최솟값-반환-pmin-1">벡터 원소별로 최솟값 반환 (<code>pmin()</code>)</a></li>
+<li><a href="#차이-계산-함수-임의의-lag-가능-diff-1">차이 계산 함수, 임의의 lag 가능 (<code>diff()</code>)</a></li>
+</ul></li>
+<li><a href="#standard-template-library-stl-관련">Standard Template Library (STL) 관련</a><ul>
+<li><a href="#partial_sort를-사용해-median.default-구현"><code>partial_sort</code>를 사용해 <code>median.default()</code> 구현</a></li>
+<li><a href="#unordered_set을-활용한-in-함수-구현"><code>unordered_set</code>을 활용한 <code>%in%</code> 함수 구현</a></li>
+<li><a href="#unordered_set을-사용한-unique-함수"><code>unordered_set</code>을 사용한 <code>unique()</code> 함수</a></li>
+<li><a href="#stdmin을-사용한-min-함수"><code>std::min()</code>을 사용한 <code>min()</code> 함수</a></li>
+<li><a href="#min_element를-활용한-which.min-함수"><code>min_element</code>를 활용한 <code>which.min()</code> 함수</a></li>
+</ul></li>
+<li><a href="#rcppexamples-패키지-관련"><code>RcppExamples</code> 패키지 관련</a><ul>
+<li><a href="#숫자-벡터-예제-rcppnumericvectorexample">숫자 벡터 예제 (<code>RcppNumericVectorExample</code>)</a></li>
+<li><a href="#스트링-벡터-예제-rcppstringvectorexample">스트링 벡터 예제 (<code>RcppStringVectorExample</code>)</a></li>
+<li><a href="#행렬-예제-rcppmatrixexample">행렬 예제 (<code>RcppMatrixExample()</code>)</a></li>
+<li><a href="#데이터프레임-예제-rcppdataframe">데이터프레임 예제 (<code>RcppDataFrame()</code>)</a></li>
+<li><a href="#리스트-예제-rcpplistexample">리스트 예제 (<code>RcppListExample()</code>)</a></li>
+<li><a href="#날짜-예제-rcppdateexample">날짜 예제 (<code>RcppDateExample()</code>)</a></li>
+<li><a href="#random-number-generation-예제-rcpprngsexample">Random number generation 예제 (<code>RcppRNGsExample()</code>)</a></li>
+</ul></li>
 </ul>
 </div>
 
 <p><code>Rcpp</code> 패키지를 활용한 예제들을 소개한다.</p>
-<pre class="r"><code>library(Rcpp)</code></pre>
-<div id="예제-피보나치-수열-계산" class="section level2">
-<h2>예제: 피보나치 수열 계산</h2>
+<pre class="r"><code>library(Rcpp)
+library(RcppExamples)</code></pre>
+<div id="단순-연산-예제" class="section level2">
+<h2>단순 연산 예제</h2>
+<div id="피보나치-수열-계산" class="section level3">
+<h3>피보나치 수열 계산</h3>
 <p><span class="citation">(Eddelbuettel 2013)</span> 11쪽</p>
 <pre class="r"><code>#include &lt;Rcpp.h&gt;
 using namespace Rcpp;
@@ -413,9 +461,1947 @@ fibonacci(20)
 <pre><code>## 
 ## &gt; fibonacci(20)
 ## [1] 6765</code></pre>
+</div>
+</div>
+<div id="단순-통계량-예제-missing-없을-때" class="section level2">
+<h2>단순 통계량 예제 (missing 없을 때)</h2>
+<div id="평균-계산-mean" class="section level3">
+<h3>평균 계산 (<code>mean()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+double mean_cpp(NumericVector x) {
+  int n = x.size();
+  double y = 0;
+  
+  for(int i = 0; i &lt; n; ++i) {
+    y += x[i] / n;
+  }
+  return y;
+}
+
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+x &lt;- c(1,2,3,4,5)
+mean_cpp(x)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/mean_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; x &lt;- c(1, 2, 3, 4, 5)
+## 
+## &gt; mean_cpp(x)
+## [1] 3</code></pre>
+</div>
+<div id="누적합-cumsum-계산" class="section level3">
+<h3>누적합 (<code>cumsum()</code>) 계산</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector cumsum_cpp(NumericVector x) {
+  int n = x.size();
+  NumericVector out(n);
+  
+  out[0] = x[0];
+  for(int i = 1; i &lt; n; ++i) {
+    out[i] = out[i - 1] + x[i];
+  }
+  return out;
+}
+
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+x &lt;- c(1,2,3,4,5)
+cumsum_cpp(x)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/cumsum_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; x &lt;- c(1, 2, 3, 4, 5)
+## 
+## &gt; cumsum_cpp(x)
+## [1]  1  3  6 10 15</code></pre>
+</div>
+<div id="어떤-logical-vector의-적어도-한-개의-원소가-true인지-판단-any" class="section level3">
+<h3>어떤 logical vector의 적어도 한 개의 원소가 <code>TRUE</code>인지 판단 (<code>any()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+bool any_cpp(LogicalVector x) {
+  int n = x.size();
+  
+  for(int i = 0; i &lt; n; ++i) {
+    if (x[i]) return true;
+  }
+  return false;
+}
+
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+x &lt;- c(1,2,3,4,5)
+any_cpp(x&lt;3)
+any_cpp(x&lt;0)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/any_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; x &lt;- c(1, 2, 3, 4, 5)
+## 
+## &gt; any_cpp(x &lt; 3)
+## [1] TRUE
+## 
+## &gt; any_cpp(x &lt; 0)
+## [1] FALSE</code></pre>
+</div>
+<div id="logical-true를-만족하는-위치를-반환하는-함수-position" class="section level3">
+<h3>logical <code>TRUE</code>를 만족하는 위치를 반환하는 함수 (<code>Position()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+int Position_cpp(Function pred, List x) {
+  int n = x.size();
+  
+  for(int i = 0; i &lt; n; ++i) {
+    LogicalVector res = pred(x[i]);
+    if (res[0]) return i + 1;
+  }
+  return 0;
+}
+
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+xs &lt;- list(1, &quot;bats&quot;, NA, NULL, 75)
+Position_cpp(is.na, xs) ## returns 3
+Position_cpp(function(xx){ xx == &quot;bats&quot; }, xs) ## returns 2
+Position_cpp(function(xx){ xx == 1 }, xs) ## returns 1
+# Position(function(xx){ xx == 75 }, xs) ##중간의 NA, NULL 때문에 오류 발생
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/Position_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; xs &lt;- list(1, &quot;bats&quot;, NA, NULL, 75)
+## 
+## &gt; Position_cpp(is.na, xs)
+## [1] 3
+## 
+## &gt; Position_cpp(function(xx) {
+## +     xx == &quot;bats&quot;
+## + }, xs)
+## [1] 2
+## 
+## &gt; Position_cpp(function(xx) {
+## +     xx == 1
+## + }, xs)
+## [1] 1</code></pre>
+</div>
+<div id="벡터-원소별로-최솟값-반환-pmin" class="section level3">
+<h3>벡터 원소별로 최솟값 반환 (<code>pmin()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector pmin_cpp(NumericVector x, NumericVector y) {
+  int n = std::max(x.size(), y.size());
+  NumericVector x1 = rep_len(x, n);
+  NumericVector y1 = rep_len(y, n);
+  
+  NumericVector out(n);
+  
+  for (int i = 0; i &lt; n; ++i) {
+    out[i] = std::min(x1[i], y1[i]);
+  }
+  
+  return out;
+}
+
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+min(5:1, pi)
+pmin_cpp(5:1, pi)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/pmin_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; min(5:1, pi)
+## [1] 1
+## 
+## &gt; pmin_cpp(5:1, pi)
+## [1] 3.141593 3.141593 3.000000 2.000000 1.000000</code></pre>
+</div>
+<div id="input의-모든-값들이-true인지-판단-all" class="section level3">
+<h3>input의 모든 값들이 <code>TRUE</code>인지 판단 (<code>all()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+bool all_cpp(LogicalVector x) {
+  int n = x.size();
+  
+  for(int i = 0; i &lt; n; ++i) {
+    if (!x[i]) return false;
+  }
+  return true;
+}
+
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+x &lt;- 1:10
+all_cpp(x&gt;0)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/all_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; x &lt;- 1:10
+## 
+## &gt; all_cpp(x &gt; 0)
+## [1] TRUE</code></pre>
+</div>
+<div id="벡터-원소-순서대로-곱하는-함수-cumprod" class="section level3">
+<h3>벡터 원소 순서대로 곱하는 함수 (<code>cumprod()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector cumprod_cpp(NumericVector x) {
+  
+  int n = x.size();
+  NumericVector out(n);
+  
+  out[0] = x[0];
+  for(int i = 1; i &lt; n; ++i) {
+    out[i]  = out[i - 1] * x[i];
+  }
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+cumprod_cpp(1:5)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/cumprod_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; cumprod_cpp(1:5)
+## [1]   1   2   6  24 120</code></pre>
+</div>
+<div id="벡터-n번째-항까지의-최솟값을-차례로-반환하는-함수-cummin" class="section level3">
+<h3>벡터 n번째 항까지의 최솟값을 차례로 반환하는 함수 (<code>cummin()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector cummin_cpp(NumericVector x) {
+  int n = x.size();
+  NumericVector out(n);
+  
+  out[0] = x[0];
+  for(int i = 1; i &lt; n; ++i) {
+    out[i]  = std::min(out[i - 1], x[i]);
+  }
+  return out;
+}
+
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+cummin_cpp(c(2,5,7,1,4))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/cummin_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; cummin_cpp(c(2, 5, 7, 1, 4))
+## [1] 2 2 2 1 1</code></pre>
+</div>
+<div id="벡터-n번째-항까지의-최댓값을-차례로-반환하는-함수-cummax" class="section level3">
+<h3>벡터 n번째 항까지의 최댓값을 차례로 반환하는 함수 (<code>cummax()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector cummax_cpp(NumericVector x) {
+  int n = x.size();
+  NumericVector out(n);
+  
+  out[0] = x[0];
+  for(int i = 1; i &lt; n; ++i) {
+    out[i]  = std::max(out[i - 1], x[i]);
+  }
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+cummax_cpp(c(2,5,7,1,4))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/cummax_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; cummax_cpp(c(2, 5, 7, 1, 4))
+## [1] 2 5 7 7 7</code></pre>
+</div>
+<div id="lag-1-차이-계산-함수" class="section level3">
+<h3>Lag 1 차이 계산 함수</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector diff_lagone(NumericVector x){
+  int n = x.size();
+  NumericVector out(n - 1);
+  
+  for(int i = 1; i &lt; n; i++){
+    out[i - 1] = x[i] - x[i - 1];
+  }
+  return out ;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+diff_lagone(c(1,6,5,1,3))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/diff_lagone.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; diff_lagone(c(1, 6, 5, 1, 3))
+## [1]  5 -1 -4  2</code></pre>
+</div>
+<div id="차이-계산-함수-임의의-lag-가능-diff" class="section level3">
+<h3>차이 계산 함수, 임의의 lag 가능 (<code>diff()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector difflag_cpp(NumericVector x, int lag = 1){
+  int n = x.size();
+  NumericVector out(n - lag);
+  
+  for(int i = lag; i &lt; n; i++){
+    out[i - lag] = x[i] - x[i - lag];
+  }
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+difflag_cpp(c(1,6,5,1,3), lag=2)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/difflag_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; difflag_cpp(c(1, 6, 5, 1, 3), lag = 2)
+## [1]  4 -5 -2</code></pre>
+</div>
+<div id="범위-계산-함수-range" class="section level3">
+<h3>범위 계산 함수 (<code>range()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector range_cpp(NumericVector x){
+  double omin, omax;  
+  int n = x.size();
+  NumericVector out(2);
+  
+  omin = x[0];
+  omax = x[0];
+  
+  for(int i = 1; i &lt; n; i++){
+    omin = std::min(x[i], omin);
+    omax = std::max(x[i], omax);
+  }
+  
+  out[0] = omin;
+  out[1] = omax;
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+range_cpp(1:5)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/range_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; range_cpp(1:5)
+## [1] 1 5</code></pre>
+</div>
+<div id="분산-계산-var" class="section level3">
+<h3>분산 계산 (<code>var()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>Missing value 없다고 가정</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+double var_cpp(NumericVector x) {
+  int n = x.size();
+  double mx = 0;
+  double out = 0;
+  
+  if(n &lt; 2) {
+    return NA_REAL;
+  }
+  
+  for(int i = 0; i &lt; n; ++i) {
+    mx += x[i] / n;
+  }
+  
+  for(int i = 0; i &lt; n; ++i) {
+    out += pow(x[i] - mx, 2);
+  }
+  
+  out = out / (n-1);
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+var_cpp(c(1,3,5))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/var_cpp.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; var_cpp(c(1, 3, 5))
+## [1] 4</code></pre>
+</div>
+</div>
+<div id="단순-통계량-예제-missing-있을-때" class="section level2">
+<h2>단순 통계량 예제 (missing 있을 때)</h2>
+<div id="최솟값-계산-함수-min" class="section level3">
+<h3>최솟값 계산 함수 (<code>min()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector minC(NumericVector x, bool na_rm = false){
+  int n = x.size();
+  NumericVector out = NumericVector::create(R_PosInf);
+  
+  if (na_rm == false) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (NumericVector::is_na(x[i])) {
+        out[0] = NA_REAL;
+        return out;
+      }
+      if (x[i] &lt; out[0]) {
+        out[0] = x[i];
+      }
+    }
+  }
+  
+  if (na_rm) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (x[i] == NA_REAL) {
+        continue;
+      }
+      if (x[i] &lt; out[0]) {
+        out[0] = x[i];
+      }
+    }
+  }
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+minC(c(1,3,5,NA))
+minC(c(1,3,5,NA), na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/minC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; minC(c(1, 3, 5, NA))
+## [1] NA
+## 
+## &gt; minC(c(1, 3, 5, NA), na_rm = TRUE)
+## [1] 1</code></pre>
+</div>
+<div id="최댓값-계산-함수-max" class="section level3">
+<h3>최댓값 계산 함수 (<code>max()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제, <code>minC()</code> 활용</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector minC(NumericVector x, bool na_rm = false){
+  int n = x.size();
+  NumericVector out = NumericVector::create(R_PosInf);
+  
+  if (na_rm == false) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (NumericVector::is_na(x[i])) {
+        out[0] = NA_REAL;
+        return out;
+      }
+      if (x[i] &lt; out[0]) {
+        out[0] = x[i];
+      }
+    }
+  }
+  
+  if (na_rm) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (x[i] == NA_REAL) {
+        continue;
+      }
+      if (x[i] &lt; out[0]) {
+        out[0] = x[i];
+      }
+    }
+  }
+  
+  return out;
+}
+
+// [[Rcpp::export]]
+NumericVector maxC(NumericVector x, bool na_rm = false){
+  return -minC(-x, na_rm);
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+maxC(c(1,3,5,NA))
+maxC(c(1,3,5,NA), na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/maxC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; maxC(c(1, 3, 5, NA))
+## [1] NA
+## 
+## &gt; maxC(c(1, 3, 5, NA), na_rm = TRUE)
+## [1] 5</code></pre>
+</div>
+<div id="범위-계산-함수-range-1" class="section level3">
+<h3>범위 계산 함수 (<code>range()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제, <code>minC()</code>, <code>maxC()</code> 활용</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector minC(NumericVector x, bool na_rm = false){
+  int n = x.size();
+  NumericVector out = NumericVector::create(R_PosInf);
+  
+  if (na_rm == false) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (NumericVector::is_na(x[i])) {
+        out[0] = NA_REAL;
+        return out;
+      }
+      if (x[i] &lt; out[0]) {
+        out[0] = x[i];
+      }
+    }
+  }
+  
+  if (na_rm) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (x[i] == NA_REAL) {
+        continue;
+      }
+      if (x[i] &lt; out[0]) {
+        out[0] = x[i];
+      }
+    }
+  }
+  
+  return out;
+}
+
+// [[Rcpp::export]]
+NumericVector maxC(NumericVector x, bool na_rm = false){
+  return -minC(-x, na_rm);
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+maxC(c(1,3,5,NA))
+maxC(c(1,3,5,NA), na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/rangeC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; rangeC(c(1, 3, 5, NA))
+## [1] NA NA
+## 
+## &gt; rangeC(c(1, 3, 5, NA), na_rm = TRUE)
+## [1] 1 5</code></pre>
+</div>
+<div id="평균-계산-함수-mean" class="section level3">
+<h3>평균 계산 함수 (<code>mean()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>여기서 만드는 <code>meanC()</code> 함수는 만약 <code>na_rm = TRUE</code> 이고 <code>all(is.na(x))</code>이면 <code>NaN</code>을 반환하도록 한다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector meanC(NumericVector x, bool na_rm = false){
+  int n = x.size();
+  int n_count = 0;
+  NumericVector out = NumericVector::create(0);
+  
+  if (na_rm == false) {
+    for(int i = 0; i &lt; n; i++){
+      if (NumericVector::is_na(x[i])) {
+        out[0] = NA_REAL;
+        return out;
+      }
+      out[0] += x[i];
+      n_count++;
+    }
+    out[0] /= n_count;
+  }
+  
+  if (na_rm) {
+    for(int i = 0; i &lt; n; i++){
+      if (NumericVector::is_na(x[i])) {
+        continue;
+      }
+      out[0] += x[i];
+      n_count++;
+    }
+    if (n_count == 0) {
+      out[0] = NAN;
+      return out;
+    }
+    out[0] /= n_count;
+  }
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+x &lt;- c(1,3,5,NA)
+meanC(x)
+meanC(x, na_rm=TRUE)
+y &lt;- c(NA,NA,NA,NA)
+meanC(y)
+meanC(y, na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/meanC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; x &lt;- c(1, 3, 5, NA)
+## 
+## &gt; meanC(x)
+## [1] NA
+## 
+## &gt; meanC(x, na_rm = TRUE)
+## [1] 3
+## 
+## &gt; y &lt;- c(NA, NA, NA, NA)
+## 
+## &gt; meanC(y)
+## [1] NA
+## 
+## &gt; meanC(y, na_rm = TRUE)
+## [1] NaN</code></pre>
+</div>
+<div id="분산-계산-함수-varc" class="section level3">
+<h3>분산 계산 함수 (<code>varC()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>계산량을 줄이기 위해 <code>na_rm</code>을 첫 번째 for loop에 넣었다고 한다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector varC(NumericVector x, bool na_rm = false) {
+  int n = x.size();
+  int n_count = 0;
+  double m_x = 0;
+  NumericVector out = NumericVector::create(0);
+  
+  for(int i = 0; i &lt; n; i++) {
+    if (NumericVector::is_na(x[i])) {
+      if (na_rm == FALSE) {
+        out[0] = NA_REAL;
+        return out;
+      } else {
+        continue;
+      }
+    }
+    m_x += x[i];
+    n_count++;
+  }
+  
+  if (n_count &lt; 2) {
+    out[0] = NA_REAL;
+    return out;
+  }
+  
+  m_x /= n_count;
+  
+  for(int i = 0; i &lt; n; ++i) {
+    if (NumericVector::is_na(x[i])) {
+      continue;
+    }
+    out[0] += pow(x[i] - m_x, 2);
+  }
+  
+  out[0] /= n_count - 1;
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+x &lt;- c(1,3,5,NA)
+varC(x)
+varC(x, na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/varC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; x &lt;- c(1, 3, 5, NA)
+## 
+## &gt; varC(x)
+## [1] NA
+## 
+## &gt; varC(x, na_rm = TRUE)
+## [1] 4</code></pre>
+</div>
+<div id="누적-합-함수-cumsum" class="section level3">
+<h3>누적 합 함수 (<code>cumsum()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p><code>na_rm=TRUE</code>인 경우에는 output에 <code>NA</code>를 넣으나 cumulative sum 계산시에는 무시한다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector cumsumC(NumericVector x, bool na_rm = false) {
+  int n = x.size();
+  NumericVector out(n);
+  double sum_i = 0;
+  
+  for(int i = 0; i &lt; n; ++i) {
+    if (NumericVector::is_na(x[i])) {
+      if (na_rm == false) {
+        return NumericVector::create(NA_REAL);
+      }
+      out[i] = NA_REAL;
+      continue;
+    }
+    sum_i += x[i];
+    out[i] = sum_i;
+  }
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+cumsumC(c(1,2,NA,3,4))
+cumsumC(c(1,2,NA,3,4), na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/cumsumC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; cumsumC(c(1, 2, NA, 3, 4))
+## [1] NA
+## 
+## &gt; cumsumC(c(1, 2, NA, 3, 4), na_rm = TRUE)
+## [1]  1  3 NA  6 10</code></pre>
+</div>
+<div id="어떤-logical-vector의-적어도-한-개의-원소가-true인지-판단-any-1" class="section level3">
+<h3>어떤 logical vector의 적어도 한 개의 원소가 <code>TRUE</code>인지 판단 (<code>any()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>여기서는 return type으로 <code>LogicalVector</code>를 쓴다. 만약 <code>bool</code>을 사용한다면 C++ <code>NA_LOGICAL</code> would be converted into R’s logical <code>TRUE</code>.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+LogicalVector anyC(LogicalVector x, bool na_rm = false) {
+  int n = x.size();
+  LogicalVector out = LogicalVector::create(false);
+  
+  if (na_rm == false) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (LogicalVector::is_na(x[i])) {
+        out[0] = NA_LOGICAL;
+        return out;
+      } else {
+        if (x[i]) {
+          out[0] = true;
+        }
+      }
+    }
+  }
+  
+  if (na_rm) {
+    for(int i = 0; i &lt; n; ++i) {
+      if (LogicalVector::is_na(x[i])) {
+        continue;
+      }
+      if (x[i]) {
+        out[0] = true;
+        return out;
+      }
+    }
+  }
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+x &lt;- c(1,2,NA,4,5)
+anyC(x&lt;3)
+anyC(x&lt;3, na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/anyC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; x &lt;- c(1, 2, NA, 4, 5)
+## 
+## &gt; anyC(x &lt; 3)
+## [1] NA
+## 
+## &gt; anyC(x &lt; 3, na_rm = TRUE)
+## [1] TRUE</code></pre>
+</div>
+<div id="logical-true를-만족하는-위치를-반환하는-함수-position-1" class="section level3">
+<h3>logical <code>TRUE</code>를 만족하는 위치를 반환하는 함수 (<code>Position()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>For <code>PositionC()</code> we check the results of the predicate function for <code>NA</code>s. In some cases it may also make sense check the elements of the list input for <code>NA</code>s, and provide an <code>NA</code>-handling for the predicate function.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+int PositionC(Function pred, List x, bool na_rm = false) {
+  int n = x.size();
+  
+  for(int i = 0; i &lt; n; ++i) {
+    LogicalVector res = pred(x[i]);
+    
+    if (LogicalVector::is_na(res[0])) {
+      if (na_rm) {continue;}
+      return NA_INTEGER;
+    }
+    if (res[0]) return i + 1;
+  }
+  return 0;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+xs &lt;- list(1, &quot;bats&quot;, NA, NULL, 75)
+PositionC(is.na, xs) ## returns 3
+PositionC(function(xx){ xx == &quot;bats&quot; }, xs) ## returns 2
+PositionC(function(xx){ xx == 1 }, xs) ## returns 1
+PositionC(function(xx){ xx == 75 }, xs) ##Position_cpp와는 달리 오류 발생 안함
+PositionC(function(xx){ xx == 75 }, xs, na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/PositionC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; xs &lt;- list(1, &quot;bats&quot;, NA, NULL, 75)
+## 
+## &gt; PositionC(is.na, xs)
+## [1] 3
+## 
+## &gt; PositionC(function(xx) {
+## +     xx == &quot;bats&quot;
+## + }, xs)
+## [1] 2
+## 
+## &gt; PositionC(function(xx) {
+## +     xx == 1
+## + }, xs)
+## [1] 1
+## 
+## &gt; PositionC(function(xx) {
+## +     xx == 75
+## + }, xs)
+## [1] NA
+## 
+## &gt; PositionC(function(xx) {
+## +     xx == 75
+## + }, xs, na_rm = TRUE)
+## [1] 4</code></pre>
+</div>
+<div id="벡터-원소별로-최솟값-반환-pmin-1" class="section level3">
+<h3>벡터 원소별로 최솟값 반환 (<code>pmin()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector pminC(NumericVector x, NumericVector y, bool na_rm = false) {
+  int n = std::max(x.size(), y.size());
+  NumericVector x1 = rep_len(x, n);
+  NumericVector y1 = rep_len(y, n);
+  
+  NumericVector out(n);
+  
+  for (int i = 0; i &lt; n; ++i) {
+    if (na_rm == false) {
+      if (NumericVector::is_na(x[i])) return NumericVector::create(NA_REAL);
+      if (NumericVector::is_na(y[i])) return NumericVector::create(NA_REAL);
+    }
+    if (na_rm == true) {
+      if (NumericVector::is_na(x[i])) {
+        out[i] = y[i];
+        continue;
+      }
+      if (NumericVector::is_na(y[i])) {
+        out[i] = x[i];
+        continue;
+      }
+    }
+    out[i] = std::min(x1[i], y1[i]);
+  }
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+pminC(c(5,4,NA,2,1), pi)
+pminC(c(5,4,NA,2,1), pi, na_rm=TRUE)
+pminC(c(5,4,NA,2,1), NA)
+pminC(c(5,4,NA,2,1), NA, na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/pminC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; pminC(c(5, 4, NA, 2, 1), pi)
+## [1] NA
+## 
+## &gt; pminC(c(5, 4, NA, 2, 1), pi, na_rm = TRUE)
+## [1]  3.141593e+00  3.141593e+00 6.932285e-310  2.000000e+00  1.000000e+00
+## 
+## &gt; pminC(c(5, 4, NA, 2, 1), NA)
+## [1] NA
+## 
+## &gt; pminC(c(5, 4, NA, 2, 1), NA, na_rm = TRUE)
+## [1]  5.000000e+00  4.000000e+00 6.932285e-310  2.000000e+00  1.000000e+00</code></pre>
+</div>
+<div id="차이-계산-함수-임의의-lag-가능-diff-1" class="section level3">
+<h3>차이 계산 함수, 임의의 lag 가능 (<code>diff()</code>)</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>For <code>diffC()’</code>s implementation, we again return just an <code>NA</code> whenever an <code>NA</code> value occurs. In case of na_rm = true, we ensure that calculations which are affected by <code>NA</code>’s will also return an <code>NA</code>. (We could have also chosen to exclude <code>NA</code>s completely from the input or - equivalently - the output).</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector difflagC(NumericVector x, int lag = 1, bool na_rm = false){
+  int n = x.size();
+  NumericVector out(n - lag);
+  for(int i = lag; i &lt; n; i++){
+    if (NumericVector::is_na(x[i]) || NumericVector::is_na(x[i - lag])) {
+      if (na_rm == false) {
+        return NumericVector::create(NA_REAL);
+      }
+      out[i - lag] = NA_REAL;
+      continue;
+    }
+    out[i - lag] = x[i] - x[i - lag];
+  }
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+difflagC(c(1,6,NA,1,3), lag=2)
+difflagC(c(1,6,NA,1,3), lag=2, na_rm=TRUE)
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/difflagC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; difflagC(c(1, 6, NA, 1, 3), lag = 2)
+## [1] NA
+## 
+## &gt; difflagC(c(1, 6, NA, 1, 3), lag = 2, na_rm = TRUE)
+## [1] NA -5 NA</code></pre>
+</div>
+</div>
+<div id="standard-template-library-stl-관련" class="section level2">
+<h2>Standard Template Library (STL) 관련</h2>
+<div id="partial_sort를-사용해-median.default-구현" class="section level3">
+<h3><code>partial_sort</code>를 사용해 <code>median.default()</code> 구현</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;algorithm&gt;
+#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+double medianC(NumericVector x) {
+  int n = x.size();
+  double out;
+  if (n % 2 == 0){
+    std::partial_sort (x.begin(), x.begin() + n / 2 + 1, x.end());
+    out = (x[n / 2 - 1] + x[n / 2]) / 2;
+  } else {
+    std::partial_sort (x.begin(), x.begin() + (n + 1) / 2, x.end());
+    out = x[(n + 1) / 2 - 1];
+  }
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+medianC(c(1,2,3,5,6))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/medianC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; medianC(c(1, 2, 3, 5, 6))
+## [1] 3</code></pre>
+</div>
+<div id="unordered_set을-활용한-in-함수-구현" class="section level3">
+<h3><code>unordered_set</code>을 활용한 <code>%in%</code> 함수 구현</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>// [[Rcpp::plugins(cpp11)]]
+#include &lt;Rcpp.h&gt;
+#include &lt;unordered_set&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+LogicalVector inC(CharacterVector x, CharacterVector table) {
+  std::unordered_set&lt;String&gt; seen;
+  int n_x = x.size();
+  std::vector&lt;bool&gt; out;
+  
+  seen.insert (table.begin(), table.end());
+  
+  for (int i = 0; i &lt; n_x; ++i) {
+    if (seen.find(x[i]) == seen.end()) {
+      out.push_back(false);
+      continue;
+    } 
+    out.push_back(true);
+  }
+  
+  return wrap(out);
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+inC(&quot;A&quot;, c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))
+inC(&quot;D&quot;, c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/inC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; inC(&quot;A&quot;, c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))
+## [1] TRUE
+## 
+## &gt; inC(&quot;D&quot;, c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))
+## [1] FALSE</code></pre>
+</div>
+<div id="unordered_set을-사용한-unique-함수" class="section level3">
+<h3><code>unordered_set</code>을 사용한 <code>unique()</code> 함수</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<p>일단 input이 numeric인 경우만 고려해 보기로 한다.</p>
+<pre class="r"><code>// [[Rcpp::plugins(cpp11)]]
+#include &lt;Rcpp.h&gt;
+#include &lt;unordered_set&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+NumericVector uniqueC(NumericVector x) {
+  std::unordered_set&lt;int&gt; seen;
+  int n = x.size();
+  std::vector&lt;double&gt; out;
+  
+  for (int i = 0; i &lt; n; ++i) {
+    if (seen.insert(x[i]).second) out.push_back(x[i]);
+  }
+  
+  return wrap(out);
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+uniqueC(c(1,2,3,3))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/uniqueC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; uniqueC(c(1, 2, 3, 3))
+## [1] 1 2 3</code></pre>
+</div>
+<div id="stdmin을-사용한-min-함수" class="section level3">
+<h3><code>std::min()</code>을 사용한 <code>min()</code> 함수</h3>
+<p><span class="citation">Wickham (2015)</span> 25장 예제</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+double minC_std(NumericVector x){
+  int n = x.size();
+  double out = x[0];
+  
+  for (int i = 0; i &lt; n; i++){
+    out = std::min(out, x[i]);
+  }
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+minC_std(c(1,2,3,0.5))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/minC_std.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; minC_std(c(1, 2, 3, 0.5))
+## [1] 0.5</code></pre>
+</div>
+<div id="min_element를-활용한-which.min-함수" class="section level3">
+<h3><code>min_element</code>를 활용한 <code>which.min()</code> 함수</h3>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;iterator&gt;
+
+using namespace Rcpp;
+
+// This is a simple example of exporting a C++ function to R. You can
+// source this function into an R session using the Rcpp::sourceCpp 
+// function (or via the Source button on the editor toolbar). Learn
+// more about Rcpp at:
+//
+//   http://www.rcpp.org/
+//   http://adv-r.had.co.nz/Rcpp.html
+//   http://gallery.rcpp.org/
+//
+
+// [[Rcpp::export]]
+double which_minC(NumericVector x){
+  int out;
+  out = std::distance(x.begin(),std::min_element(x.begin(),x.end()));
+  out++;
+  
+  return out;
+}
+
+// You can include R code blocks in C++ files processed with sourceCpp
+// (useful for testing and development). The R code will be automatically 
+// run after the compilation.
+//
+
+/*** R
+which_minC(c(1,2,3,0.5))
+*/</code></pre>
+<p>실행</p>
+<pre class="r"><code>sourceCpp(&quot;~/Dropbox/R Markdown files/Lecture_CinR/ex_Rcpp/which_minC.cpp&quot;)</code></pre>
+<pre><code>## 
+## &gt; which_minC(c(1, 2, 3, 0.5))
+## [1] 4</code></pre>
+</div>
+</div>
+<div id="rcppexamples-패키지-관련" class="section level2">
+<h2><code>RcppExamples</code> 패키지 관련</h2>
+<div id="숫자-벡터-예제-rcppnumericvectorexample" class="section level3">
+<h3>숫자 벡터 예제 (<code>RcppNumericVectorExample</code>)</h3>
+<p>벡터를 받으면 제곱근을 돌려주는 함수</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+#include &lt;cmath&gt;
+
+using namespace Rcpp; 
+
+// suncc needs help to disambiguate between sqrt( float ) and sqrt(double) 
+inline static double sqrt_double( double x ){ return ::sqrt( x ); }
+
+// [[Rcpp::export]]
+List NumericVectorExample(const NumericVector &amp; orig) {
+    NumericVector vec(orig.size());     // create a target vector of the same size
+    
+    // we could query size via
+    //   int n = vec.size();
+    // and loop over the vector, but using the STL is so much nicer
+    // so we use a STL transform() algorithm on each element
+    std::transform(orig.begin(), orig.end(), vec.begin(), sqrt_double);
+
+    return List::create(Named(&quot;result&quot;) = vec, 
+                        Named(&quot;original&quot;) = orig);
+}</code></pre>
+<p>R 실행 코드는 다음과 같다.</p>
+<pre class="r"><code>RcppNumericVectorExample &lt;- function(vec=seq(1,9)^2) {
+
+    ## Make the call...
+    val &lt;- NumericVectorExample(vec)
+    val
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>RcppExamples::RcppNumericVectorExample()</code></pre>
+<pre><code>## $result
+## [1] 1 2 3 4 5 6 7 8 9
+## 
+## $original
+## [1]  1  4  9 16 25 36 49 64 81</code></pre>
+</div>
+<div id="스트링-벡터-예제-rcppstringvectorexample" class="section level3">
+<h3>스트링 벡터 예제 (<code>RcppStringVectorExample</code>)</h3>
+<p>스트링 벡터를 받으면 모두 lower letter로 바꿔서 출력해주는 함수</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+template &lt;class T&gt; T mytolower (T c) {
+    static std::locale loc;
+    return std::tolower(c, loc);
+}
+
+// [[Rcpp::export]]
+List StringVectorExample(const StringVector &amp; orig) {
+    StringVector vec(orig.size());  
+
+    std::transform(orig.begin(), orig.end(), vec.begin(), 
+           make_string_transformer(mytolower&lt;char&gt;) );
+
+    return List::create(Named(&quot;result&quot;)   = vec,
+                        Named(&quot;original&quot;) = orig);
+}</code></pre>
+<p>R 실행 코드는 다음과 같다.</p>
+<pre class="r"><code>RcppStringVectorExample &lt;- function(vec=c(&quot;Tick&quot;, &quot;Tack&quot;, &quot;Tock&quot;)) {
+    ## Make the call...
+    val &lt;- StringVectorExample(vec)
+    val
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>RcppExamples::RcppStringVectorExample()</code></pre>
+<pre><code>## $result
+## [1] &quot;tick&quot; &quot;tack&quot; &quot;tock&quot;
+## 
+## $original
+## [1] &quot;Tick&quot; &quot;Tack&quot; &quot;Tock&quot;</code></pre>
+</div>
+<div id="행렬-예제-rcppmatrixexample" class="section level3">
+<h3>행렬 예제 (<code>RcppMatrixExample()</code>)</h3>
+<p>행렬을 input으로 받으면 각 원소의 제곱근을 계산해 반환해주는 함수</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+#include &lt;cmath&gt;
+
+// suncc needs help to disambiguate between sqrt( float ) and sqrt(double) 
+inline static double sqrt_double(double x) { return ::sqrt(x); }
+
+using namespace Rcpp; 
+
+// [[Rcpp::export]]
+List MatrixExample(const NumericMatrix &amp; orig) {
+    NumericMatrix mat(orig.nrow(), orig.ncol());    
+
+    // we could query size via
+    //   int n = mat.nrow(), k=mat.ncol();
+    // and loop over the elements, but using the STL is so much nicer
+    // so we use a STL transform() algorithm on each element
+    std::transform(orig.begin(), orig.end(), mat.begin(), sqrt_double);
+
+    return List::create(Named(&quot;result&quot;) = mat, 
+                        Named(&quot;original&quot;) = orig);
+}</code></pre>
+<p>R 실행 코드는 다음과 같다.</p>
+<pre class="r"><code>RcppMatrixExample &lt;- function(mat=matrix(seq(1,9)^2, ncol=3)) {
+    ## Make the call...
+    val &lt;- MatrixExample(mat)
+    val
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>RcppExamples::RcppMatrixExample()</code></pre>
+<pre><code>## $result
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## $original
+##      [,1] [,2] [,3]
+## [1,]    1   16   49
+## [2,]    4   25   64
+## [3,]    9   36   81</code></pre>
+</div>
+<div id="데이터프레임-예제-rcppdataframe" class="section level3">
+<h3>데이터프레임 예제 (<code>RcppDataFrame()</code>)</h3>
+<p>원래 받은 데이터프레임의 원소를 약간 바꾸어 다시 출력</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List DataFrameExample(const DataFrame &amp; DF) {
+
+    // access each column by name
+    IntegerVector a = DF[&quot;a&quot;];
+    CharacterVector b = DF[&quot;b&quot;];
+    DateVector c = DF[&quot;c&quot;];
+    
+    // do something
+    a[2] = 42;
+    b[1] = &quot;foo&quot;;
+    c[0] = c[0] + 7; // move up a week
+    
+    // create a new data frame
+    DataFrame NDF = DataFrame::create(Named(&quot;a&quot;)=a,
+                                      Named(&quot;b&quot;)=b,
+                                      Named(&quot;c&quot;)=c);
+    
+    // and return old and new in list
+    return List::create(Named(&quot;origDataFrame&quot;) = DF,
+                        Named(&quot;newDataFrame&quot;) = NDF);
+}</code></pre>
+<p>R 실행 코드는 다음과 같다.</p>
+<pre class="r"><code>RcppDataFrame &lt;- function() {
+
+    ## create a simple data.frame
+    ## here we enforce strings, factors can be used too
+    D &lt;- data.frame(a=1:3,
+                    b=LETTERS[1:3],
+                    c=as.Date(&quot;2011-01-01&quot;)+0:2,
+                    stringsAsFactors=FALSE)
+    cat(&quot;Original data frame before call:\n&quot;)
+    print(D)
+
+    ## Make the call...
+    val &lt;- DataFrameExample(D)
+    
+    cat(&quot;\nAfter call, original and new data frames:\n&quot;)
+    print(val)
+
+    invisible(val)
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>RcppExamples::RcppDataFrame()</code></pre>
+<pre><code>## Original data frame before call:
+##   a b          c
+## 1 1 A 2011-01-01
+## 2 2 B 2011-01-02
+## 3 3 C 2011-01-03
+## 
+## After call, original and new data frames:
+## $origDataFrame
+##    a   b          c
+## 1  1   A 2011-01-08
+## 2  2 foo 2011-01-02
+## 3 42   C 2011-01-03
+## 
+## $newDataFrame
+##    a   b          c
+## 1  1   A 2011-01-08
+## 2  2 foo 2011-01-02
+## 3 42   C 2011-01-03</code></pre>
+</div>
+<div id="리스트-예제-rcpplistexample" class="section level3">
+<h3>리스트 예제 (<code>RcppListExample()</code>)</h3>
+<p><code>params</code> 라는 리스트를 받으면 리스트의 <code>method</code>, <code>tolerance</code>, <code>maxIter</code>, <code>startDate</code> 원소를 리스트에 추가해서 반환한다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List ListExamples(const List &amp; rparam) {
+
+    // accessing all list elements by name
+    std::string method   = as&lt;std::string&gt;(rparam[&quot;method&quot;]);
+    double tolerance     = as&lt;double&gt;(rparam[&quot;tolerance&quot;]);
+    int    maxIter       = as&lt;int&gt;(rparam[&quot;maxIter&quot;]);
+    Date startDate = Date(as&lt;int&gt;(rparam[&quot;startDate&quot;])); // ctor from int
+    
+    Rprintf(&quot;\nIn C++, seeing the following value\n&quot;);
+    Rprintf(&quot;Method argument    : %s\n&quot;, method.c_str());
+    Rprintf(&quot;Tolerance argument : %f\n&quot;, tolerance);
+    Rprintf(&quot;MaxIter argument   : %d\n&quot;, maxIter);
+    Rprintf(&quot;Start date argument: %04d-%02d-%02d\n&quot;, 
+            startDate.getYear(), startDate.getMonth(), startDate.getDay());
+
+    return List::create(Named(&quot;method&quot;, method),
+                        Named(&quot;tolerance&quot;, tolerance),
+                        Named(&quot;maxIter&quot;, maxIter),
+                        Named(&quot;startDate&quot;, startDate),
+                        Named(&quot;params&quot;, rparam));
+
+}</code></pre>
+<p>R 실행 코드는 다음과 같다.</p>
+<pre class="r"><code>RcppListExample &lt;- function(params) {
+
+    ## Check that params is properly set.
+    if (missing(params)) {
+        cat(&quot;\nIn R, setting default argument for params\n&quot;)
+        params &lt;- list(method=&#39;BFGS&#39;,
+                       tolerance=1.0e-8,
+                       maxIter=1000,
+                       startDate=as.Date(&#39;2006-7-15&#39;))
+    }
+
+    ## Make the call...
+    val &lt;- ListExamples(params)
+    val
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>RcppExamples::RcppListExample()</code></pre>
+<pre><code>## 
+## In R, setting default argument for params
+## 
+## In C++, seeing the following value
+## Method argument    : BFGS
+## Tolerance argument : 0.000000
+## MaxIter argument   : 1000
+## Start date argument: 2006-07-15</code></pre>
+<pre><code>## $method
+## [1] &quot;BFGS&quot;
+## 
+## $tolerance
+## [1] 1e-08
+## 
+## $maxIter
+## [1] 1000
+## 
+## $startDate
+## [1] &quot;2006-07-15&quot;
+## 
+## $params
+## $params$method
+## [1] &quot;BFGS&quot;
+## 
+## $params$tolerance
+## [1] 1e-08
+## 
+## $params$maxIter
+## [1] 1000
+## 
+## $params$startDate
+## [1] &quot;2006-07-15&quot;</code></pre>
+</div>
+<div id="날짜-예제-rcppdateexample" class="section level3">
+<h3>날짜 예제 (<code>RcppDateExample()</code>)</h3>
+<p>현재 날짜, 시간 근방을 알려주고 이를 리스트로 저장 후 반환한다.</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List DateExample(DateVector &amp; dv, DatetimeVector &amp; dtv) {
+    // Support for this changed with Rcpp 0.12.8 but is still optional
+    // Support for &lt;&lt; redirection added added with 0.12.8.2 and later
+#if RCPP_NEW_DATE_DATETIME_VECTORS &amp;&amp; (RCPP_DEV_VERSION &gt;= RcppDevVersion(0,12,8,2))
+    Rcout &lt;&lt; &quot;\nIn C++, seeing the following date values before/after adding a week:\n&quot;
+          &lt;&lt; dv &lt;&lt; std::endl;
+    dv = dv + 7;        // shift a week
+    Rcout &lt;&lt; dv &lt;&lt; std::endl;
+
+    Rcout &lt;&lt; &quot;\nIn C++, seeing the following datetime values before/after adding a quarter second:\n&quot;
+          &lt;&lt; dtv &lt;&lt; std::endl;
+    dtv = dtv + 0.250;          // shift 250 millisec
+    Rcout &lt;&lt; dtv &lt;&lt; std::endl;
+    
+#else    
+    Function formatDate(&quot;format.Date&quot;);
+    Function formatDatetime(&quot;format.POSIXct&quot;);
+
+    Rcout &lt;&lt; &quot;\nIn C++, seeing the following date values before/after adding a week:\n&quot;;
+    print(formatDate(dv));
+    for (int i=0; i&lt;dv.size(); i++) {
+        dv[i] = dv[i] + 7;
+    }
+    print(formatDate(dv));
+
+    Rcout &lt;&lt; &quot;\nIn C++, seeing the following datetime values before/after adding a quarter second:\n&quot;;
+    print(formatDatetime(dtv));
+    // fallback
+    for (int i=0; i&lt;dtv.size(); i++) {
+        dtv[i] = dtv[i] + 0.250;
+    }
+    print(formatDatetime(dtv));
+#endif
+    
+    // Build result set to be returned as a list to R.
+    return List::create(Named(&quot;date&quot;,   dv),
+                        Named(&quot;datetime&quot;, dtv));
+}</code></pre>
+<p>R 실행 코드는 다음과 같다.</p>
+<pre class="r"><code>RcppDateExample &lt;- function(dv, dtv) {
+
+    ## Check that params is properly set.
+    if (missing(dv)) {
+        cat(&quot;\nIn R, setting default argument for dv\n&quot;)
+        dv &lt;- Sys.Date() + -2:2
+    }
+
+    if (missing(dtv)) {
+        cat(&quot;\nIn R, setting default argument for dtv\n&quot;)
+        dtv &lt;- Sys.time() + (-2:2)*0.5
+    }
+
+    optdig &lt;- getOption(&quot;digits.secs&quot;)
+    options(digits.secs=3)
+
+    ## Make the call...
+    val &lt;- DateExample(dv, dtv)
+
+    options(digits.secs=optdig)
+
+    val
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>RcppExamples::RcppDateExample()</code></pre>
+<pre><code>## 
+## In R, setting default argument for dv
+## 
+## In R, setting default argument for dtv
+## 
+## In C++, seeing the following date values before/after adding a week:
+## 2020-04-26 2020-04-27 2020-04-28 2020-04-29 2020-04-30 
+## 2020-05-03 2020-05-04 2020-05-05 2020-05-06 2020-05-07 
+## 
+## In C++, seeing the following datetime values before/after adding a quarter second:
+## 2020-04-28 20:57:08.628281 2020-04-28 20:57:09.128281 2020-04-28 20:57:09.628281 2020-04-28 20:57:10.128281 
+## 2020-04-28 20:57:10.628281 
+## 2020-04-28 20:57:08.878281 2020-04-28 20:57:09.378281 2020-04-28 20:57:09.878281 2020-04-28 20:57:10.378281 
+## 2020-04-28 20:57:10.878281</code></pre>
+<pre><code>## $date
+## [1] &quot;2020-05-03&quot; &quot;2020-05-04&quot; &quot;2020-05-05&quot; &quot;2020-05-06&quot; &quot;2020-05-07&quot;
+## 
+## $datetime
+## [1] &quot;2020-04-28 20:57:08 PDT&quot; &quot;2020-04-28 20:57:09 PDT&quot;
+## [3] &quot;2020-04-28 20:57:09 PDT&quot; &quot;2020-04-28 20:57:10 PDT&quot;
+## [5] &quot;2020-04-28 20:57:10 PDT&quot;</code></pre>
+</div>
+<div id="random-number-generation-예제-rcpprngsexample" class="section level3">
+<h3>Random number generation 예제 (<code>RcppRNGsExample()</code>)</h3>
+<p><code>n</code>개의 normal, t, poisson 샘플을 뽑아서 출력</p>
+<p>(아마도 <code>rnorm</code>, <code>rt</code>, <code>rpois</code> 함수가 Rcpp 헤더 파일 안에 들어가 있는 것 같음)</p>
+<pre class="r"><code>#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+DataFrame RcppRNGs(const int n) {
+    NumericVector xn = rnorm(n);
+    NumericVector xt = rt(n, 1.0);
+    NumericVector xp = rpois(n, 1.0);
+    
+    // create a new data frame to return drawns
+    return DataFrame::create(Named(&quot;rnorm&quot;) = xn,
+                             Named(&quot;rt&quot;)    = xt,
+                             Named(&quot;rpois&quot;) = xp);
+}</code></pre>
+<p>R 실행 코드는 다음과 같다.</p>
+<pre class="r"><code>RcppRNGsExample &lt;- function(n) {
+    df &lt;- RcppRNGs(n)           # make the call...
+    df
+}</code></pre>
+<p>실행</p>
+<pre class="r"><code>RcppExamples::RcppRNGsExample(5)</code></pre>
+<pre><code>##         rnorm          rt rpois
+## 1 -0.02048891 -1.80754656     1
+## 2 -0.29380028 -0.72049061     0
+## 3 -2.31253910  0.67527773     0
+## 4 -1.22187641 -1.05738961     1
+## 5 -0.61993936  0.02127867     0</code></pre>
 <div id="refs" class="references">
 <div id="ref-Eddelbuettel2013">
 <p>Eddelbuettel, Dirk. 2013. <em>Seamless R and C++ Integration with Rcpp</em>. Springer-Verlag GmbH. <a href="https://www.ebook.de/de/product/21309289/dirk_eddelbuettel_seamless_r_and_c_integration_with_rcpp.html">https://www.ebook.de/de/product/21309289/dirk_eddelbuettel_seamless_r_and_c_integration_with_rcpp.html</a>.</p>
+</div>
+<div id="ref-Wickham2015">
+<p>Wickham, Hadley. 2015. <em>Advanced R</em>. Boca Raton, FL: CRC Press.</p>
+</div>
 </div>
 </div>
 </div>
