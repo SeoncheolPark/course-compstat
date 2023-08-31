@@ -25,6 +25,6 @@ title: "Statistical Computing (2023 Fall, Hanyang University)"
   + Lecture notes will be given during this semester.
   
 - Grading:
-  + Class attendance (10%): **two absences** without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 3/4 of classes. 
+  + Class attendance (10%): **two absences** without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes. 
   + In-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website ([for 11628](https://learning.hanyang.ac.kr/courses/133489) or [for 13300](https://learning.hanyang.ac.kr/courses/133490)). Late submissions are **not** allowed.
   + Midterm (30%) and Final: Details will be given soon.
