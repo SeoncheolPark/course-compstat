@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Seoncheol Park">
 
 <title>Statistical Computing - Lecture 01: Introduction</title>
 <style>
@@ -129,10 +130,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#outline-of-the-lecture-from-3rd-edition" id="toc-outline-of-the-lecture-from-3rd-edition" class="nav-link active" data-scroll-target="#outline-of-the-lecture-from-3rd-edition">Outline of the lecture (from 3rd edition)</a></li>
-  <li><a href="#what-is-statistical-programming" id="toc-what-is-statistical-programming" class="nav-link" data-scroll-target="#what-is-statistical-programming">What is statistical programming?</a>
-  <ul class="collapse">
-  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
-  </ul></li>
+  <li><a href="#what-is-statistical-programming" id="toc-what-is-statistical-programming" class="nav-link" data-scroll-target="#what-is-statistical-programming">What is statistical programming?</a></li>
   <li><a href="#history-of-r" id="toc-history-of-r" class="nav-link" data-scroll-target="#history-of-r">History of R</a></li>
   <li><a href="#why-use-a-command-line" id="toc-why-use-a-command-line" class="nav-link" data-scroll-target="#why-use-a-command-line">Why use a command line?</a></li>
   </ul>
@@ -150,6 +148,12 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Seoncheol Park </p>
+          </div>
+  </div>
     
   
     
@@ -160,6 +164,73 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="outline-of-the-lecture-from-3rd-edition" class="level2">
 <h2 class="anchored" data-anchor-id="outline-of-the-lecture-from-3rd-edition">Outline of the lecture (from 3rd edition)</h2>
+<!--
+format: 
+  beamer:
+    header-includes:
+      \RequirePackage{fontspec}
+      \RequirePackage{calc}
+      \RequirePackage{microtype}
+      \RequirePackage{etoolbox}
+      \RequirePackage{chngcntr}
+      \RequirePackage{scrextend}
+      \RequirePackage{contour}
+      \RequirePackage[normalem]{ulem}
+      \RequirePackage{underscore}
+      \RequirePackage{hyperref}
+      \titlegraphic{\includegraphics[width=4cm]{images/hanyang.png}}
+      \definecolor{hyublue}{HTML}{0E4A84}
+      \definecolor{hyulightblue}{HTML}{6e92b5}
+      \definecolor{hyusilver}{HTML}{898C8E}
+      \definecolor{hyulightsilver}{HTML}{6a737b}
+      \setbeamercolor{title}{fg=hyublue}
+      \setbeamercolor{frametitle}{bg=hyusilver!25, fg=hyublue}
+      \setbeamercolor{background canvas}{bg=White}
+      \setbeamercolor{block title}{bg=white, fg=hyublue}
+      \setbeamercolor{block body}{bg=white}
+      \setbeamercolor{block title example}{bg=hyulightblue, fg=white}
+      \setbeamercolor{block body example}{bg=hyulightblue!25}
+      \setbeamercolor{progress bar}{fg=hyulightblue}
+      \setbeamertemplate{blocks}[rounded][shadow=false]
+      \setbeamerfont{title}{size=\fontsize{20}{20}}
+      \setbeamerfont{frametitle}{size=\fontsize{14}{20}}
+      %\setbeamerfont{title}{family=\fontfamily{montserrat}\selectfont}
+      \setlength{\leftmargini}{5pt} % set bullet left margin
+      \setlength{\leftmarginii}{5pt}
+    navigation: horizontal
+    theme: metropolis
+    outertheme: metropolis
+    fonttheme: metropolis
+    colortheme: seahorse
+    themeoptions:
+      - outer/progressbar=foot
+      - outer/numbering=fraction
+      - inner/sectionpage=none
+    pdf-engine: xelatex
+    mainfont: HelveticaNeue
+    sansfont: Fira Mono
+    monofont: Fira Mono
+    monofontoptions: 
+      - Scale=1
+      - Color=orange
+    fontsize: 9pt
+    linkcolor: hyublue
+    citecolor: hyublue
+    filecolor: hyublue
+    urlcolor: hyublue
+    classoption: ['notheorems']
+    CJKmainfont: NanumGothic
+    margin-bottom: .4in
+    margin-left: .2in
+    margin-right: .2in
+    colorlinks: true
+    papersize: a4
+    keep-tex: true
+    toc: false
+
+
+---
+-->
 <ul>
 <li><p>Introduction to the R language (Chapter 2)</p></li>
 <li><p>Programming statistical graphics (Chapter 3)</p></li>
@@ -181,6 +252,9 @@ ul.task-list li input[type="checkbox"] {
 <li>the <strong>results</strong> displayed.</li>
 </ul></li>
 <li><p>These tasks can be done in a number of different computer applications: Microsoft Excel, SAS, SPSS, R, Stata, Python, Matlab, C++, etc.</p></li>
+</ul>
+<hr>
+<ul>
 <li><p>Statistical programming is closely related to other forms of numerical programming.</p>
 <ul>
 <li>Optimization,</li>
@@ -190,25 +264,22 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Computers are very good at exact, reproducible computations, but the real world is full of randomness. In <strong>stochastic simulation</strong>, we program a computer to act as though it is producing random results.</p></li>
 <li><p>Since graphs play an important role in statistical analysis, <strong>drawing graphics</strong> is also important topic of statistical programming.</p></li>
 </ul>
-<section id="quiz" class="level3">
-<h3 class="anchored" data-anchor-id="quiz">Quiz</h3>
-<p><em>Statistical programming languages</em></p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="panel-heading tutorial-quiz-title"><span data-i18n="text.quiz">Quiz</span></div>
-</div>
-<div class="cell-output-display">
-<div class="panel panel-default tutorial-question-container">
-<div data-label="quiz1-1" class="tutorial-question panel-body">
-<div id="quiz1-1-answer_container" class="shiny-html-output"></div>
-<div id="quiz1-1-message_container" class="shiny-html-output"></div>
-<div id="quiz1-1-action_button_container" class="shiny-html-output"></div>
-<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
-</div>
-</div>
-</div>
-</div>
-</section>
+<!--
+### Quiz
+
+*Statistical programming languages*
+
+#```{r quiz1}
+#quiz(
+#  question("Statistical programming tasks can be done in a number of different computer #applications including ",
+#    answer("R", correct = TRUE),
+#    answer("Microsoft Excel", correct = TRUE),
+#    answer("Python", correct = TRUE),
+#    answer("Hancom Office")
+#  )
+#)
+#```
+-->
 </section>
 <section id="history-of-r" class="level2">
 <h2 class="anchored" data-anchor-id="history-of-r">History of R</h2>
@@ -234,6 +305,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<hr>
 <ul>
 <li>Nowadays most programs use interactive graphical user interfaces (menus, tochscreens, etc.)</li>
 </ul>
@@ -247,6 +319,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<hr>
 <ul>
 <li><p>Command-line interfaces require greater knowledge: You need to remember what to type to achieve a particular outcome.</p></li>
 <li><p>Why did we choose such an old-fashioned way of doing things?</p>
@@ -294,32 +367,6 @@ session$onSessionEnded(function() {
       })
 </script>
  
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz1-1", question = structure("Statistical programming tasks can be done in a number of different computer applications including", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_720b0c", 
-    option = "R", value = "R", label = structure("R", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8f955e5", 
-    option = "Microsoft Excel", value = "Microsoft Excel", label = structure("Microsoft Excel", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9c09d18", 
-    option = "Python", value = "Python", label = structure("Python", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_382e256", 
-    option = "Hancom Office", value = "Hancom Office", label = structure("Hancom Office", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Incorrect. Be sure to select every correct answer.", html = TRUE, class = c("html", 
-"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), message = NULL, post_message = NULL), ids = list(
-    answer = "quiz1-1-answer", question = "quiz1-1"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = FALSE, seed = 1669928697.22238, 
-    options = list()), class = c("learnr_checkbox", "tutorial_question"
-)), session = session)
-</script>
- 
 <script type="application/shiny-prerendered" data-context="server-extras">
 ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
   quos <- rlang::enquos(...)
@@ -355,7 +402,7 @@ ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
 <!--html_preserve-->
 
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42]}},"value":[{"type":"character","attributes":{},"value":["backports","base","checkmate","cli","commonmark","compiler","datasets","digest","ellipsis","evaluate","fastmap","fontawesome","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","magrittr","markdown","methods","mime","promises","R6","Rcpp","renv","rlang","rmarkdown","rprojroot","shiny","stats","tools","utils","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["1.4.1","4.2.3","2.2.0","3.6.1","1.9.0","4.2.3","4.2.3","0.6.33","0.3.2","0.21","1.1.1","0.5.2","4.2.3","4.2.3","0.5.6","1.6.2","1.6.11","0.1.4","1.8.7","1.43","1.3.1","0.11.4","1.0.3","2.0.3","1.8","4.2.3","0.12","1.2.1","2.5.1","1.0.11","1.0.2","1.1.1","2.24","2.0.3","1.7.5","4.2.3","4.2.3","4.2.3","2.5.0","0.40","1.8-4","2.3.7"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]}},"value":[{"type":"character","attributes":{},"value":["base","cli","compiler","datasets","digest","ellipsis","evaluate","fastmap","fontawesome","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","learnr","lifecycle","magrittr","methods","mime","promises","R6","Rcpp","renv","rlang","rmarkdown","rprojroot","shiny","stats","tools","utils","withr","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["4.2.3","3.6.1","4.2.3","4.2.3","0.6.33","0.3.2","0.21","1.1.1","0.5.2","4.2.3","4.2.3","0.5.6","1.6.2","1.6.11","0.1.4","1.8.7","1.43","1.3.1","0.11.4","1.0.3","2.0.3","4.2.3","0.12","1.2.1","2.5.1","1.0.11","1.0.2","1.1.1","2.24","2.0.3","1.7.5","4.2.3","4.2.3","4.2.3","2.5.0","0.40","1.8-4","2.3.7"]}]}]}
 </script>
 <!--/html_preserve-->
 

@@ -1,6 +1,9 @@
 ---
 title: "Lecture 01: Introduction"
-output: learnr::tutorial
+author: "Seoncheol Park"
+output: 
+  learnr::tutorial:
+    css: css/theme.css
 runtime: shiny_prerendered
 ---
 
@@ -11,106 +14,174 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Outline of the lecture (from 3rd edition)
 
--   Introduction to the R language (Chapter 2)
+<!--
+format: 
+  beamer:
+    header-includes:
+      \RequirePackage{fontspec}
+      \RequirePackage{calc}
+      \RequirePackage{microtype}
+      \RequirePackage{etoolbox}
+      \RequirePackage{chngcntr}
+      \RequirePackage{scrextend}
+      \RequirePackage{contour}
+      \RequirePackage[normalem]{ulem}
+      \RequirePackage{underscore}
+      \RequirePackage{hyperref}
+      \titlegraphic{\includegraphics[width=4cm]{images/hanyang.png}}
+      \definecolor{hyublue}{HTML}{0E4A84}
+      \definecolor{hyulightblue}{HTML}{6e92b5}
+      \definecolor{hyusilver}{HTML}{898C8E}
+      \definecolor{hyulightsilver}{HTML}{6a737b}
+      \setbeamercolor{title}{fg=hyublue}
+      \setbeamercolor{frametitle}{bg=hyusilver!25, fg=hyublue}
+      \setbeamercolor{background canvas}{bg=White}
+      \setbeamercolor{block title}{bg=white, fg=hyublue}
+      \setbeamercolor{block body}{bg=white}
+      \setbeamercolor{block title example}{bg=hyulightblue, fg=white}
+      \setbeamercolor{block body example}{bg=hyulightblue!25}
+      \setbeamercolor{progress bar}{fg=hyulightblue}
+      \setbeamertemplate{blocks}[rounded][shadow=false]
+      \setbeamerfont{title}{size=\fontsize{20}{20}}
+      \setbeamerfont{frametitle}{size=\fontsize{14}{20}}
+      %\setbeamerfont{title}{family=\fontfamily{montserrat}\selectfont}
+      \setlength{\leftmargini}{5pt} % set bullet left margin
+      \setlength{\leftmarginii}{5pt}
+    navigation: horizontal
+    theme: metropolis
+    outertheme: metropolis
+    fonttheme: metropolis
+    colortheme: seahorse
+    themeoptions:
+      - outer/progressbar=foot
+      - outer/numbering=fraction
+      - inner/sectionpage=none
+    pdf-engine: xelatex
+    mainfont: HelveticaNeue
+    sansfont: Fira Mono
+    monofont: Fira Mono
+    monofontoptions: 
+      - Scale=1
+      - Color=orange
+    fontsize: 9pt
+    linkcolor: hyublue
+    citecolor: hyublue
+    filecolor: hyublue
+    urlcolor: hyublue
+    classoption: ['notheorems']
+    CJKmainfont: NanumGothic
+    margin-bottom: .4in
+    margin-left: .2in
+    margin-right: .2in
+    colorlinks: true
+    papersize: a4
+    keep-tex: true
+    toc: false
+---
+-->
 
--   Programming statistical graphics (Chapter 3)
+- Introduction to the R language (Chapter 2)
 
--   Programming with R (Chapter 4)
+- Programming statistical graphics (Chapter 3)
 
--   Programming with `tidyverse` (Chapter 5)
+- Programming with R (Chapter 4)
 
--   Stochastic simulation (Chapter 6)
+- Programming with `tidyverse` (Chapter 5)
 
--   Computational linear algebra (Chapter 7)
+- Stochastic simulation (Chapter 6)
 
--   Numerical optimization (Chapter 8)
+- Computational linear algebra (Chapter 7)
+
+- Numerical optimization (Chapter 8)
 
 ## What is statistical programming?
 
--   **Computer programming** involves controlling computers, telling them what calculations to do, what to display, etc.
+- **Computer programming** involves controlling computers, telling them what calculations to do, what to display, etc.
 
--   **Statistical programming** involves doing computations to aid in statistical analysis.
+- **Statistical programming** involves doing computations to aid in statistical analysis.
+  + **Data** must be summarized and displayed.
+  + **Models** must be fit to data, and 
+  + the **results** displayed.
+  
+- These tasks can be done in a number of different computer applications: Microsoft Excel, SAS, SPSS, R, Stata, Python, Matlab, C++, etc. 
 
-    -   **Data** must be summarized and displayed.
-    -   **Models** must be fit to data, and
-    -   the **results** displayed.
+---
 
--   These tasks can be done in a number of different computer applications: Microsoft Excel, SAS, SPSS, R, Stata, Python, Matlab, C++, etc.
+- Statistical programming is closely related to other forms of numerical programming.
+  + Optimization,
+  + Approximation of mathematical functions,
+  + Computational linear algebra (Chapter 7)
 
--   Statistical programming is closely related to other forms of numerical programming.
+- Computers are very good at exact, reproducible computations, but the real world is full of randomness. In **stochastic simulation**, we program a computer to act as though it is producing random results.
 
-    -   Optimization,
-    -   Approximation of mathematical functions,
-    -   Computational linear algebra (Chapter 7)
+- Since graphs play an important role in statistical analysis, **drawing graphics** is also important topic of statistical programming.
 
--   Computers are very good at exact, reproducible computations, but the real world is full of randomness. In **stochastic simulation**, we program a computer to act as though it is producing random results.
-
--   Since graphs play an important role in statistical analysis, **drawing graphics** is also important topic of statistical programming.
-
+<!--
 ### Quiz
 
 *Statistical programming languages*
 
-```{r quiz1}
-quiz(
-  question("Statistical programming tasks can be done in a number of different computer applications including ",
-    answer("R", correct = TRUE),
-    answer("Microsoft Excel", correct = TRUE),
-    answer("Python", correct = TRUE),
-    answer("Hancom Office")
-  )
-)
-```
+#```{r quiz1}
+#quiz(
+#  question("Statistical programming tasks can be done in a number of different computer #applications including ",
+#    answer("R", correct = TRUE),
+#    answer("Microsoft Excel", correct = TRUE),
+#    answer("Python", correct = TRUE),
+#    answer("Hancom Office")
+#  )
+#)
+#```
+-->
 
 ## History of R
 
--   [R](https://cran.r-project.org) is an open source package for statistical computing.
+- [R](https://cran.r-project.org) is an open source package for statistical computing.
 
--   **Open source**: R is freely available, and its users are free to see how it is written, and to improve it.
+- **Open source**: R is freely available, and its users are free to see how it is written, and to improve it.
 
--   R is based on the computer language S. In 1993 Robert Gentleman and Ross Ihaka at the University of Auckland wanted to experiment with the language, so they developed an implementation, and named it R. ([Article](https://thehistoryofcomputing.net/the-r-programming-language?external_link=true))
+- R is based on the computer language S. In 1993 Robert Gentleman and Ross Ihaka at the University of Auckland wanted to experiment with the language, so they developed an implementation, and named it R. ([Article](https://thehistoryofcomputing.net/the-r-programming-language?external_link=true))
 
--   They made it open source, and thousands of people around the world have contributed to its development.
+- They made it open source, and thousands of people around the world have contributed to its development.
 
 ## Why use a command line?
 
--   The R system is mainly command-driven, with the user typing in text and asking R to execute it.
+- The R system is mainly command-driven, with the user typing in text and asking R to execute it. 
 
 ```{r echo=FALSE, fig.align='center', out.width = '70%', fig.cap="R studio interface from https://gsp.humboldt.edu/olm/R/01_02_Intro.html."}
 knitr::include_graphics("images/intro-interface.png")
 ```
 
--   Nowadays most programs use interactive graphical user interfaces (menus, tochscreens, etc.)
+---
+
+- Nowadays most programs use interactive graphical user interfaces (menus, tochscreens, etc.)
 
 ```{r echo=FALSE, fig.align='center', out.width = '70%', fig.cap="R commander example from https://m.blog.naver.com/unirone/221600419671."}
 knitr::include_graphics("images/intro-Rcommander.jpg")
 ```
 
--   Command-line interfaces require greater knowledge: You need to remember what to type to achieve a particular outcome.
+---
 
--   Why did we choose such an old-fashioned way of doing things?
+- Command-line interfaces require greater knowledge: You need to remember what to type to achieve a particular outcome.
 
-    -   Menu-based interfaces have a **limited set** of commands, while a command- line interface is **open ended**.
-    -   Learning how to use one command-line interface will give us programming skills and some insight into statistical computations.
+- Why did we choose such an old-fashioned way of doing things?
+  + Menu-based interfaces have a **limited set** of commands, while a command- line interface is **open ended**. 
+  + Learning how to use one command-line interface will give us programming skills and some insight into statistical computations. 
 
-```{=html}
 <!--
 - Why did we choose such an old-fashioned way of doing things?
   + Menu-based interfaces are very convenient when applied to a limited set of commands, from a few to one or two hundred. However, a command- line interface is open ended. 
   + Learning how to use one command-line interface will give you skills that carry over to others, and may even give you some insight into how a menu-driven interface is implemented. 
 -->
-```
-```{=html}
+
 <!--
 - There is no question that command-line interfaces require greater knowledge on the part of the user—you need to remember what to type to achieve a particular outcome.
 -->
-```
--   [RStudio](https://posit.co/download/rstudio-desktop/), which is first released in 2011, is an integrated development environment (IDE), which allows you to edit your program, to search for help, and to run it.
 
--   In addition, when your first attempt doesn't work, R Studio supports diagnosing and fixing errors.
+- [RStudio](https://posit.co/download/rstudio-desktop/), which is first released in 2011, is an integrated development environment (IDE), which allows you to edit your program, to search for help, and to run it. 
 
-```{=html}
+- In addition, when your first attempt doesn’t work, R Studio supports diagnosing and fixing errors.
+
 <!--
 - [RStudio](https://posit.co/download/rstudio-desktop/), which is first released in 2011, is an integrated development environment (IDE), which allows you to edit your program, to search for help, and to run it. When your first attempt doesn’t work, they offer support for diagnosing and fixing errors.
 -->
-```
+

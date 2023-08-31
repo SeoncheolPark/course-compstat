@@ -8,7 +8,7 @@ website:
     collapse: true
     collapse-below: sm
     logo: images/02.svg
-    href: http://seoncheolpark.github.io
+    href: https://seoncheolpark.github.io
     background: primary
     search: true
     left:
