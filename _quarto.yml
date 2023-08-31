@@ -1,19 +1,36 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "course-compstat"
+  title: "Statistical Computing"
   navbar:
+    collapse: true
+    collapse-below: sm
+    logo: images/02.svg
+    href: http://stat.hanyang.ac.kr
+    background: primary
+    search: true
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-
+      - text: "Lecture"
+        menu:
+          - 01_gs.Rmd
+      - text: "Lab"
+        menu:
+          - text: "Lab 01: Install R and R Studio"
+            url: https://seoncheolpark.shinyapps.io/01_gslab/
+  page-footer: "Copyright 2023, Seoncheol Park"       
 format:
   html:
-    theme: cosmo
+    theme:
+      light: [minty, theme.scss]
+      dark: [minty, theme-dark.scss]
+    fontsize: 1.1em
+    linestretch: 1.7
     css: styles.css
     toc: true
-
+  
 editor: visual
 

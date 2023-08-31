@@ -1,11 +1,30 @@
 ---
-title: "course-compstat"
+title: "Statistical Computing (2023 Fall, Hanyang University)"
 ---
 
-This is a Quarto website.
+## About this course
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+- Course name: MAT2021 (11628/13300), Statistical computing
 
-```{r}
-1 + 1
-```
+- Instructor: [Seoncheol Park](https://seoncheolpark.github.io)
+
+- TA: Inguk Ka
+
+- Language: English
+
+- Schedule: 
+  + MAT2021 (11628): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)
+  + MAT2021 (13300): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)
+  + Tuesday: Lecture
+  + Friday: In-class exercise session
+  
+- Textbook: 
+  + [A First Course in Statistical Programming with R, 3rd Edition](https://www.yes24.com/Product/Goods/97720926), 
+  + [A First Course in Statistical Programming with R, 3rd Edition](https://www.yes24.com/Product/Goods/26872063), and 
+  + [its Korean translated version](https://www.yes24.com/Product/Goods/96363752)
+  + Lecture notes will be given during this semester.
+  
+- Grading:
+  + Class attendance (10%): **two absences** without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 3/4 of classes. 
+  + In-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website ([for 11628](https://learning.hanyang.ac.kr/courses/133489) or [for 13300](https://learning.hanyang.ac.kr/courses/133490)).
+  + Midterm (30%) and Final: Details will be given soon.
