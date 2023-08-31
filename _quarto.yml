@@ -8,7 +8,7 @@ website:
     collapse: true
     collapse-below: sm
     logo: images/02.svg
-    href: http://stat.hanyang.ac.kr
+    href: http://seoncheolpark.github.io
     background: primary
     search: true
     left:
@@ -20,7 +20,7 @@ website:
       - text: "Lab"
         menu:
           - text: "Lab 01: Install R and R Studio"
-            url: https://seoncheolpark.shinyapps.io/01_gslab/
+            url: https://seoncheolpark.shinyapps.io/01_gslab3/
   page-footer: "Copyright 2023, Seoncheol Park"       
 format:
   html:

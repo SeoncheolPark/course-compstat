@@ -9,68 +9,43 @@ library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## About this course
-
-- Course name: MAT2021 (11628/13300), Statistical computing
-
-- Instructor: [Seoncheol Park](https://seoncheolpark.github.io)
-
-- TA: Inguk Ka
-
-- Language: English
-
-- Schedule: 
-  + MAT2021 (11628): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)
-  + MAT2021 (13300): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)
-  + Tuesday: Lecture
-  + Friday: In-class exercise session
-  
-- Textbook: 
-  + [A First Course in Statistical Programming with R, 3rd Edition](https://www.yes24.com/Product/Goods/97720926), 
-  + [A First Course in Statistical Programming with R, 3rd Edition](https://www.yes24.com/Product/Goods/26872063), and 
-  + [its Korean translated version](https://www.yes24.com/Product/Goods/96363752)
-  + Lecture notes will be given during this semester.
-  
-- Grading:
-  + Class attendance (10%): **two absences** without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 3/4 of classes. 
-  + In-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website ([for 11628](https://learning.hanyang.ac.kr/courses/133489) or [for 13300](https://learning.hanyang.ac.kr/courses/133490)).
-  + Midterm (30%) and Final: Details will be given soon.
-
 ## Outline of the lecture (from 3rd edition)
 
-- Introduction to the R language (Chapter 2)
+-   Introduction to the R language (Chapter 2)
 
-- Programming statistical graphics (Chapter 3)
+-   Programming statistical graphics (Chapter 3)
 
-- Programming with R (Chapter 4)
+-   Programming with R (Chapter 4)
 
-- Programming with `tidyverse` (Chapter 5)
+-   Programming with `tidyverse` (Chapter 5)
 
-- Stochastic simulation (Chapter 6)
+-   Stochastic simulation (Chapter 6)
 
-- Computational linear algebra (Chapter 7)
+-   Computational linear algebra (Chapter 7)
 
-- Numerical optimization (Chapter 8)
+-   Numerical optimization (Chapter 8)
 
 ## What is statistical programming?
 
-- **Computer programming** involves controlling computers, telling them what calculations to do, what to display, etc.
+-   **Computer programming** involves controlling computers, telling them what calculations to do, what to display, etc.
 
-- **Statistical programming** involves doing computations to aid in statistical analysis.
-  + **Data** must be summarized and displayed.
-  + **Models** must be fit to data, and 
-  + the **results** displayed.
-  
-- These tasks can be done in a number of different computer applications: Microsoft Excel, SAS, SPSS, R, Stata, Python, Matlab, C++, etc. 
+-   **Statistical programming** involves doing computations to aid in statistical analysis.
 
-- Statistical programming is closely related to other forms of numerical programming.
-  + Optimization,
-  + Approximation of mathematical functions,
-  + Computational linear algebra (Chapter 7)
+    -   **Data** must be summarized and displayed.
+    -   **Models** must be fit to data, and
+    -   the **results** displayed.
 
-- Computers are very good at exact, reproducible computations, but the real world is full of randomness. In **stochastic simulation**, we program a computer to act as though it is producing random results.
+-   These tasks can be done in a number of different computer applications: Microsoft Excel, SAS, SPSS, R, Stata, Python, Matlab, C++, etc.
 
-- Since graphs play an important role in statistical analysis, **drawing graphics** is also important topic of statistical programming.
+-   Statistical programming is closely related to other forms of numerical programming.
+
+    -   Optimization,
+    -   Approximation of mathematical functions,
+    -   Computational linear algebra (Chapter 7)
+
+-   Computers are very good at exact, reproducible computations, but the real world is full of randomness. In **stochastic simulation**, we program a computer to act as though it is producing random results.
+
+-   Since graphs play an important role in statistical analysis, **drawing graphics** is also important topic of statistical programming.
 
 ### Quiz
 
@@ -89,49 +64,53 @@ quiz(
 
 ## History of R
 
-- [R](https://cran.r-project.org) is an open source package for statistical computing.
+-   [R](https://cran.r-project.org) is an open source package for statistical computing.
 
-- **Open source**: R is freely available, and its users are free to see how it is written, and to improve it.
+-   **Open source**: R is freely available, and its users are free to see how it is written, and to improve it.
 
-- R is based on the computer language S. In 1993 Robert Gentleman and Ross Ihaka at the University of Auckland wanted to experiment with the language, so they developed an implementation, and named it R. ([Article](https://thehistoryofcomputing.net/the-r-programming-language?external_link=true))
+-   R is based on the computer language S. In 1993 Robert Gentleman and Ross Ihaka at the University of Auckland wanted to experiment with the language, so they developed an implementation, and named it R. ([Article](https://thehistoryofcomputing.net/the-r-programming-language?external_link=true))
 
-- They made it open source, and thousands of people around the world have contributed to its development.
+-   They made it open source, and thousands of people around the world have contributed to its development.
 
 ## Why use a command line?
 
-- The R system is mainly command-driven, with the user typing in text and asking R to execute it. 
+-   The R system is mainly command-driven, with the user typing in text and asking R to execute it.
 
 ```{r echo=FALSE, fig.align='center', out.width = '70%', fig.cap="R studio interface from https://gsp.humboldt.edu/olm/R/01_02_Intro.html."}
 knitr::include_graphics("images/intro-interface.png")
 ```
 
-- Nowadays most programs use interactive graphical user interfaces (menus, tochscreens, etc.)
+-   Nowadays most programs use interactive graphical user interfaces (menus, tochscreens, etc.)
 
 ```{r echo=FALSE, fig.align='center', out.width = '70%', fig.cap="R commander example from https://m.blog.naver.com/unirone/221600419671."}
 knitr::include_graphics("images/intro-Rcommander.jpg")
 ```
 
-- Command-line interfaces require greater knowledge: You need to remember what to type to achieve a particular outcome.
+-   Command-line interfaces require greater knowledge: You need to remember what to type to achieve a particular outcome.
 
-- Why did we choose such an old-fashioned way of doing things?
-  + Menu-based interfaces have a **limited set** of commands, while a command- line interface is **open ended**. 
-  + Learning how to use one command-line interface will give us programming skills and some insight into statistical computations. 
+-   Why did we choose such an old-fashioned way of doing things?
 
+    -   Menu-based interfaces have a **limited set** of commands, while a command- line interface is **open ended**.
+    -   Learning how to use one command-line interface will give us programming skills and some insight into statistical computations.
+
+```{=html}
 <!--
 - Why did we choose such an old-fashioned way of doing things?
   + Menu-based interfaces are very convenient when applied to a limited set of commands, from a few to one or two hundred. However, a command- line interface is open ended. 
   + Learning how to use one command-line interface will give you skills that carry over to others, and may even give you some insight into how a menu-driven interface is implemented. 
 -->
-
+```
+```{=html}
 <!--
 - There is no question that command-line interfaces require greater knowledge on the part of the user—you need to remember what to type to achieve a particular outcome.
 -->
+```
+-   [RStudio](https://posit.co/download/rstudio-desktop/), which is first released in 2011, is an integrated development environment (IDE), which allows you to edit your program, to search for help, and to run it.
 
-- [RStudio](https://posit.co/download/rstudio-desktop/), which is first released in 2011, is an integrated development environment (IDE), which allows you to edit your program, to search for help, and to run it. 
+-   In addition, when your first attempt doesn't work, R Studio supports diagnosing and fixing errors.
 
-- In addition, when your first attempt doesn’t work, R Studio supports diagnosing and fixing errors.
-
+```{=html}
 <!--
 - [RStudio](https://posit.co/download/rstudio-desktop/), which is first released in 2011, is an integrated development environment (IDE), which allows you to edit your program, to search for help, and to run it. When your first attempt doesn’t work, they offer support for diagnosing and fixing errors.
 -->
-
+```
