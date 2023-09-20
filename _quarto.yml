@@ -17,10 +17,20 @@ website:
       - text: "Lecture"
         menu:
           - 01_gs.Rmd
+          - text: "Leture 02: R Intro (1)"
+            file: 02_introR01.Rmd
+          - text: "Leture 03: R Intro (2)"
+            file: 03_introR01.Rmd
+          - text: "Leture 04: R Graphics"
+            file: 04_graphics.Rmd
       - text: "Lab"
         menu:
           - text: "Lab 01: Install R and R Studio"
             url: https://seoncheolpark.shinyapps.io/01_gslab3/
+          - text: "Lab 02: R Intro (1)"
+            file: 02_introR01lab.Rmd
+          - text: "Lab 03: R Intro (2)"
+            file: 03_introR02lab.Rmd
     right: 
       - icon: house-door-fill
         href: https://seoncheolpark.github.io
