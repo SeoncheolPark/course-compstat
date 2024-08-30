@@ -1,5 +1,5 @@
 ---
-title: "Statistical Computing (2023 Fall, Hanyang University)"
+title: "Statistical Computing (2024 Fall, Hanyang University)"
 ---
 
 ## About this course
