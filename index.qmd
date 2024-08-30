@@ -4,17 +4,17 @@ title: "Statistical Computing (2023 Fall, Hanyang University)"
 
 ## About this course
 
-- Course name: MAT2021 (11628/13300), Statistical computing
+- Course name: MAT2021 (11295/12984), Statistical computing
 
 - Instructor: [Seoncheol Park](https://seoncheolpark.github.io)
 
-- TA: Inguk Ka
+- TA: Minseo Kim
 
 - Language: English
 
 - Schedule: 
-  + MAT2021 (11628): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)
-  + MAT2021 (13300): TUE 14:30-16:00 (Room 205, Building 507), FRI 09:00-10:30 (Room 222, Building 507)
+  + MAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)
+  + MAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)
   + Tuesday: Lecture
   + Friday: In-class exercise session
   
@@ -25,6 +25,7 @@ title: "Statistical Computing (2023 Fall, Hanyang University)"
   + Lecture notes will be given during this semester.
   
 - Grading:
-  + Class attendance (10%): **two absences** without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes. 
-  + In-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website ([for 11628](https://learning.hanyang.ac.kr/courses/133489) or [for 13300](https://learning.hanyang.ac.kr/courses/133490)). Late submissions are **not** allowed.
+  + Class attendance (10%): **four absences** without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes. 
+  + In-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website ([for 11628](https://learning.hanyang.ac.kr/courses/133489) or [for 13300](https://learning.hanyang.ac.kr/courses/133490)). Late submissions are **not** allowed. For public holidays, take-home homework assignments will be given
+instead.
   + Midterm (30%) and Final: Details will be given soon.

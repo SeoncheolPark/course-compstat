@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Statistical Computing (2023 Fall, Hanyang University)",
-    "section": "",
-    "text": "Course name: MAT2021 (11628/13300), Statistical computing\nInstructor: Seoncheol Park\nTA: Inguk Ka\nLanguage: English\nSchedule:\n\nMAT2021 (11628): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (13300): TUE 14:30-16:00 (Room 205, Building 507), FRI 09:00-10:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): two absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed.\nMidterm (30%) and Final: Details will be given soon."
-  },
-  {
-    "objectID": "index.html#about-this-course",
-    "href": "index.html#about-this-course",
-    "title": "Statistical Computing (2023 Fall, Hanyang University)",
-    "section": "",
-    "text": "Course name: MAT2021 (11628/13300), Statistical computing\nInstructor: Seoncheol Park\nTA: Inguk Ka\nLanguage: English\nSchedule:\n\nMAT2021 (11628): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (13300): TUE 14:30-16:00 (Room 205, Building 507), FRI 09:00-10:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): two absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed.\nMidterm (30%) and Final: Details will be given soon."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -21,38 +7,52 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "01_gs.html",
-    "href": "01_gs.html",
-    "title": "Lecture 01: Introduction",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistical Computing (2023 Fall, Hanyang University)",
     "section": "",
-    "text": "Introduction to the R language (Chapter 2)\nProgramming statistical graphics (Chapter 3)\nProgramming with R (Chapter 4)\nProgramming with tidyverse (Chapter 5)\nStochastic simulation (Chapter 6)\nComputational linear algebra (Chapter 7)\nNumerical optimization (Chapter 8)"
+    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
   },
   {
-    "objectID": "01_gs.html#outline-of-the-lecture-from-3rd-edition",
-    "href": "01_gs.html#outline-of-the-lecture-from-3rd-edition",
-    "title": "Lecture 01: Introduction",
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "Statistical Computing (2023 Fall, Hanyang University)",
     "section": "",
-    "text": "Introduction to the R language (Chapter 2)\nProgramming statistical graphics (Chapter 3)\nProgramming with R (Chapter 4)\nProgramming with tidyverse (Chapter 5)\nStochastic simulation (Chapter 6)\nComputational linear algebra (Chapter 7)\nNumerical optimization (Chapter 8)"
+    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
   },
   {
-    "objectID": "01_gs.html#what-is-statistical-programming",
-    "href": "01_gs.html#what-is-statistical-programming",
-    "title": "Lecture 01: Introduction",
-    "section": "What is statistical programming?",
-    "text": "What is statistical programming?\n\nComputer programming involves controlling computers, telling them what calculations to do, what to display, etc.\nStatistical programming involves doing computations to aid in statistical analysis.\n\nData must be summarized and displayed.\nModels must be fit to data, and\nthe results displayed.\n\nThese tasks can be done in a number of different computer applications: Microsoft Excel, SAS, SPSS, R, Stata, Python, Matlab, C++, etc.\n\n\n\nStatistical programming is closely related to other forms of numerical programming.\n\nOptimization,\nApproximation of mathematical functions,\nComputational linear algebra (Chapter 7)\n\nComputers are very good at exact, reproducible computations, but the real world is full of randomness. In stochastic simulation, we program a computer to act as though it is producing random results.\nSince graphs play an important role in statistical analysis, drawing graphics is also important topic of statistical programming."
+    "objectID": "00_practice.html",
+    "href": "00_practice.html",
+    "title": "Lab 00: Install R and R Studio",
+    "section": "",
+    "text": "Students should solve exercises provided in the in-class exercise session on every Friday.\nStudents should write (a single) R code about answers of exercises, submit it on course website.\n\nfor 11295 (Fri 10:30~12:00)\nfor 12984 (Fri 13:00~14:30)\n\nPlease check whether your answers are uploaded well.\nWe will not give any scores for all late submission. Please keep the time.\nYou may leave early after submitting your answers on the course website."
   },
   {
-    "objectID": "01_gs.html#history-of-r",
-    "href": "01_gs.html#history-of-r",
-    "title": "Lecture 01: Introduction",
-    "section": "History of R",
-    "text": "History of R\n\nR is an open source package for statistical computing.\nOpen source: R is freely available, and its users are free to see how it is written, and to improve it.\nR is based on the computer language S. In 1993 Robert Gentleman and Ross Ihaka at the University of Auckland wanted to experiment with the language, so they developed an implementation, and named it R. (Article)\nThey made it open source, and thousands of people around the world have contributed to its development."
+    "objectID": "00_practice.html#introduction",
+    "href": "00_practice.html#introduction",
+    "title": "Lab 00: Install R and R Studio",
+    "section": "Introduction",
+    "text": "Introduction\nWelcome to the world of statistical programming!\n\n\nHow to download and install R\nHow to download and install RStudio, an integrated development environment (IDE)\nAlternatively, you can use VScode with R and Rstudio extension. In this class, however, we will mainly focus on R studio."
   },
   {
-    "objectID": "01_gs.html#why-use-a-command-line",
-    "href": "01_gs.html#why-use-a-command-line",
-    "title": "Lecture 01: Introduction",
-    "section": "Why use a command line?",
-    "text": "Why use a command line?\n\nThe R system is mainly command-driven, with the user typing in text and asking R to execute it.\n\n\n\n\n\n\nR studio interface from https://gsp.humboldt.edu/olm/R/01_02_Intro.html.\n\n\n\n\n\n\nNowadays most programs use interactive graphical user interfaces (menus, tochscreens, etc.)\n\n\n\n\n\n\nR commander example from https://m.blog.naver.com/unirone/221600419671.\n\n\n\n\n\n\nCommand-line interfaces require greater knowledge: You need to remember what to type to achieve a particular outcome.\nWhy did we choose such an old-fashioned way of doing things?\n\nMenu-based interfaces have a limited set of commands, while a command- line interface is open ended.\nLearning how to use one command-line interface will give us programming skills and some insight into statistical computations.\n\n\n\n\n\nRStudio, which is first released in 2011, is an integrated development environment (IDE), which allows you to edit your program, to search for help, and to run it.\nIn addition, when your first attempt doesn’t work, R Studio supports diagnosing and fixing errors."
+    "objectID": "00_practice.html#install-r-and-rstudio",
+    "href": "00_practice.html#install-r-and-rstudio",
+    "title": "Lab 00: Install R and R Studio",
+    "section": "Install R and RStudio",
+    "text": "Install R and RStudio\n\nR can be downloaded from https://cloud.r-project.org. Most users should download and install a binary version.\nR is designed to be very portable: it will run on Microsoft Windows, Linux, Solaris, macOS, and other operating systems.\nYou should also install RStudio, after you have installed R, from https://posit.co/download/rstudio-desktop/."
+  },
+  {
+    "objectID": "00_practice.html#getting-started-in-rstudio",
+    "href": "00_practice.html#getting-started-in-rstudio",
+    "title": "Lab 00: Install R and R Studio",
+    "section": "Getting started in RStudio",
+    "text": "Getting started in RStudio\n\nWhen you are working in RStudio, you’ll see a display something like\n\n\n\n\n\n\nA typical RStudio display.\n\n\n\n\n\nThe display includes four panes.\n\nThe top left pane is the Source Pane, or editor. You will type your program (or other document) there. You can have several open files in this pane; the tabs allow you to choose which is active.\nThe bottom left pane is called the Console Pane. This is where you communicate with R. You can type directly into this pane, but it is usually better to work within the editor pane, because that way you can easily correct mistakes and try again.\nThe two right-hand panes contain a variety of tabs. In the figure, the top pane is showing the Environment Pane (i.e. the workspace), and the bottom pane is showing a plot.\n\nFor now, you just need to know the following points:\n\nYou should do most of your work in the editor, but you can occasionally type in the console.\nThe console pane displays what R is doing.\nAll of the panes can be resized and repositioned, so sometimes it may appear that you’ve lost one, but there’s no need to worry: just find the header of the pane and click there with your mouse, and the pane will reappear. If the pane is there but the content isn’t what you want, try clicking on the tabs at the top."
+  },
+  {
+    "objectID": "00_practice.html#exercises",
+    "href": "00_practice.html#exercises",
+    "title": "Lab 00: Install R and R Studio",
+    "section": "Exercises",
+    "text": "Exercises\n\nBasic R exercise\nHere’s a simple exercise with an empty code chunk provided for entering the answer.\n1. Write the R code required to add two plus two:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExercise with R function\n\n2. Now write an R function add that adds any two numbers and then call it:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nAssignment\nYou can use &lt;- or = to assign values to a specific variable:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n3. Now write an R variable studentinfo which contains your student ID and name:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nNumber of rows\n\n4. Modify the following code to limit the number of rows printed to 5:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nSubmit your answers on the course website!\n\nfor 11295 (Fri 10:30~12:00)\nfor 12984 (Fri 13:00~14:30)"
   }
 ]
