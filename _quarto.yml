@@ -18,6 +18,8 @@ website:
         menu:
           - text: "Lab 00: Install R and R Studio"
             file: 00_practice.qmd
+          - text: "Lab 01 ~ Lab 12"
+            file: 01_12.qmd
     right: 
       - icon: house-door-fill
         href: https://seoncheolpark.github.io

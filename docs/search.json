@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "01_12.html",
+    "href": "01_12.html",
+    "title": "Lab 01 ~ Lab 12",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Statistical Computing (2024 Fall, Hanyang University)",
-    "section": "",
-    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
-  },
-  {
-    "objectID": "index.html#about-this-course",
-    "href": "index.html#about-this-course",
-    "title": "Statistical Computing (2024 Fall, Hanyang University)",
-    "section": "",
-    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
+    "text": "Lab 01 ~ Lab 12 will be uploaded to the Hanyang University LMS:\n\nfor 11295 (Fri 10:30~12:00)\nfor 12984 (Fri 13:00~14:30)"
   },
   {
     "objectID": "00_practice.html",
@@ -54,5 +40,26 @@
     "title": "Lab 00: Install R and R Studio",
     "section": "Exercises",
     "text": "Exercises\n\nBasic R exercise\nHere’s a simple exercise with an empty code chunk provided for entering the answer.\n1. Write the R code required to add two plus two:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExercise with R function\n\n2. Now write an R function add that adds any two numbers and then call it:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nAssignment\nYou can use &lt;- or = to assign values to a specific variable:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n3. Now write an R variable studentinfo which contains your student ID and name:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nNumber of rows\n\n4. Modify the following code to limit the number of rows printed to 5:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nSubmit your answers on the course website!\n\nfor 11295 (Fri 10:30~12:00)\nfor 12984 (Fri 13:00~14:30)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistical Computing (2024 Fall, Hanyang University)",
+    "section": "",
+    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
+  },
+  {
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "Statistical Computing (2024 Fall, Hanyang University)",
+    "section": "",
+    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
 ]

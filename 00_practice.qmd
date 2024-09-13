@@ -7,18 +7,20 @@ filters:
   - webr
 ---
 
-- Students should solve exercises provided in the in-class exercise session on every Friday.
+-   Students should solve exercises provided in the in-class exercise session on every Friday.
 
-- Students should write (a single) R code about answers of exercises, submit it on course website.
-  + [for 11295 (Fri 10:30~12:00)](https://learning.hanyang.ac.kr/courses/160878)
-  + [for 12984 (Fri 13:00~14:30)](https://learning.hanyang.ac.kr/courses/160879)
-  
-- Please **check** whether your answers are uploaded well.
+-   Students should write (a single) R code about answers of exercises, submit it on course website.
 
-- We will **not** give any scores for all **late submission**. Please keep the time.
+    -   [for 11295 (Fri 10:30\~12:00)](https://learning.hanyang.ac.kr/courses/160878)
+    -   [for 12984 (Fri 13:00\~14:30)](https://learning.hanyang.ac.kr/courses/160879)
 
-- You may leave early after submitting your answers on the course website.
+-   Please **check** whether your answers are uploaded well.
 
+-   We will **not** give any scores for all **late submission**. Please keep the time.
+
+-   You may leave early after submitting your answers on the course website.
+
+```{=html}
 <!--
 format: 
   pdf:
@@ -61,7 +63,7 @@ format:
     CJKmainfont: NanumGothic
 pdf-engine: xelatex
 -->
-
+```
 \newpage
 
 \vspace{5cm}
@@ -70,45 +72,45 @@ pdf-engine: xelatex
 
 Welcome to the world of statistical programming!
 
+```{=html}
 <!--
 We will start in this chapter by giving you an idea of what statistical programming is all about.
 -->
+```
+-   How to download and install [R](https://cran.r-project.org)
 
-- How to download and install [R](https://cran.r-project.org)
+-   How to download and install [RStudio](https://posit.co/download/rstudio-desktop/), an **integrated development environment (IDE)**
 
-- How to download and install [RStudio](https://posit.co/download/rstudio-desktop/), an **integrated development environment (IDE)**
-
-- Alternatively, you can use [VScode](https://code.visualstudio.com/) with R and Rstudio extension. In this class, however, we will mainly focus on R studio. 
+-   Alternatively, you can use [VScode](https://code.visualstudio.com/) with R and Rstudio extension. In this class, however, we will mainly focus on R studio.
 
 ## Install R and RStudio
 
-- R can be downloaded from [`https://cloud.r-project.org`](https://cloud.r-project.org). Most users should download and install a binary version.
+-   R can be downloaded from [`https://cloud.r-project.org`](https://cloud.r-project.org). Most users should download and install a binary version.
 
-- R is designed to be very portable: it will run on Microsoft Windows, Linux, Solaris, macOS, and other operating systems.
+-   R is designed to be very portable: it will run on Microsoft Windows, Linux, Solaris, macOS, and other operating systems.
 
-- You should also install RStudio, after you have installed R, from [`https://posit.co/download/rstudio-desktop/`](https://posit.co/download/rstudio-desktop/).
+-   You should also install RStudio, after you have installed R, from [`https://posit.co/download/rstudio-desktop/`](https://posit.co/download/rstudio-desktop/).
 
 ## Getting started in RStudio
 
-- When you are working in RStudio, you’ll see a display something like
+-   When you are working in RStudio, you’ll see a display something like
 
 ```{r echo=FALSE, fig.align='center', out.width = '70%', fig.cap="A typical RStudio display."}
 knitr::include_graphics("images/intro-Rstudiopane.png")
 ```
 
-- The display includes four **panes**. 
-  + The top left pane is the **Source Pane**, or **editor**. You will type your program (or other document) there. You can have several open files in this pane; the tabs allow you to choose which is active. 
-  + The bottom left pane is called the **Console Pane**. This is where you communicate with R. You can type directly into this pane, but it is usually better to work within the editor pane, because that way you can easily correct mistakes and try again.
-  + The two right-hand panes contain a variety of tabs. In the figure, the top pane is showing the **Environment Pane** (i.e. the workspace), and the bottom pane is showing a **plot**. 
-  
-- For now, you just need to know the following points:
-  + You should do most of your work in the editor, but you can occasionally type in the console.
-  + The console pane displays what R is doing.
-  + All of the panes can be resized and repositioned, so sometimes it may appear that you’ve lost one, but there’s no need to worry: just find the header of the pane and click there with your mouse, and the pane will reappear. If the pane is there but the content isn’t what you want, try clicking on the tabs at the top.
+-   The display includes four **panes**.
+    -   The top left pane is the **Source Pane**, or **editor**. You will type your program (or other document) there. You can have several open files in this pane; the tabs allow you to choose which is active.
+    -   The bottom left pane is called the **Console Pane**. This is where you communicate with R. You can type directly into this pane, but it is usually better to work within the editor pane, because that way you can easily correct mistakes and try again.
+    -   The two right-hand panes contain a variety of tabs. In the figure, the top pane is showing the **Environment Pane** (i.e. the workspace), and the bottom pane is showing a **plot**.
+-   For now, you just need to know the following points:
+    -   You should do most of your work in the editor, but you can occasionally type in the console.
+    -   The console pane displays what R is doing.
+    -   All of the panes can be resized and repositioned, so sometimes it may appear that you’ve lost one, but there’s no need to worry: just find the header of the pane and click there with your mouse, and the pane will reappear. If the pane is there but the content isn’t what you want, try clicking on the tabs at the top.
 
 ## Exercises
 
-### Basic R exercise 
+### Basic R exercise
 
 *Here's a simple exercise with an empty code chunk provided for entering the answer.*
 
@@ -118,13 +120,13 @@ knitr::include_graphics("images/intro-Rstudiopane.png")
 
 ```
 
-
 ### Exercise with R function
 
+```{=html}
 <!--
 *Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
 -->
-
+```
 **2**. Now write an R function `add` that adds any two numbers and then call it:
 
 ```{webr-r}
@@ -153,10 +155,11 @@ professorinfo
 
 ### Number of rows
 
+```{=html}
 <!--
 *Here's an exercise where the chunk is pre-evaluated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
 -->
-
+```
 **4**. Modify the following code to limit the number of rows printed to 5:
 
 ```{webr-r}
@@ -166,7 +169,6 @@ mtcars
 
 ### Submit your answers on the course website!
 
-- [for 11295 (Fri 10:30~12:00)](https://learning.hanyang.ac.kr/courses/160878)
+-   [for 11295 (Fri 10:30\~12:00)](https://learning.hanyang.ac.kr/courses/160878)
 
-- [for 12984 (Fri 13:00~14:30)](https://learning.hanyang.ac.kr/courses/160879)
-  
+-   [for 12984 (Fri 13:00\~14:30)](https://learning.hanyang.ac.kr/courses/160879)
