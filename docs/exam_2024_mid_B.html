@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Seoncheol Park">
+<meta name="dcterms.date" content="2024-10-25">
 
-<title>Statistical Computing – Lab 01 ~ Lab 12</title>
+<title>Statistical Computing – Midterm: MAT2021</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,6 +104,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -147,28 +210,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 01 ~ Lab 12</h1>
+<h1 class="title"><strong>Midterm: MAT2021</strong></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Seoncheol Park </p>
-          </div>
-  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 25, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -178,15 +248,313 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<!--
+header-includes:
+  \usepackage{amsthm, amsmath, kotex, bm, indentfirst, lmodern, graphicx, hyperref, multicol, footmisc, babel, comment, makeidx, amsfonts, amssymb}
+  \usepackage{xeCJK}
+        \xeCJKsetup{
+          CJKspace=true
+        }
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \setlength\headheight{28pt}
+  \fancyhead[RO,LE]{\includegraphics[width=5cm]{images/hanyang.png}}
+  \fancyfoot[LE,RO]{}
+  \usepackage{color}
+  \usepackage{tcolorbox}
+  \newtcolorbox{graybox}{
+    colback=lightgray,
+    colframe=black,
+    coltext=black,
+    boxsep=5pt,
+    arc=4pt}
+  \setCJKmainfont[Ligatures=TeX,BoldFont={* ExtraBold},AutoFakeSlant]{NanumMyeongjo}
+  \setCJKsansfont[Ligatures=TeX,BoldFont={* ExtraBold},AutoFakeSlant]{NanumGothic}
+  \setCJKmonofont{NanumGothicCoding}
+output:
+  unilur::tutorial_pdf_solution:
+    latex_engine: xelatex
+linkcolor: Cerulean
+citecolor: Fuchsia
+urlcolor: RedOrange
+toccolor: Black
+mainfont: HelveticaNeue
+sansfont: HelveticaNeue
+monofont: Fira Mono
+monofontoptions: 
+  - Scale=1
+  - Color=orange
+CJKmainfont: NanumGothic
+classoption: twoside
+geometry:
+      - left=.2in
+      - right=.2in
+      - top=.8in
+      - bottom=1.2in
+
+
+
+
+---
+-->
 <ul>
-<li>Lab 01 ~ Lab 12 will be uploaded to the <a href="https://learning.hanyang.ac.kr">Hanyang University LMS</a>:
+<li><p>Students must use R or R Studio in <strong>full-screen mode</strong>.</p></li>
+<li><p>Using Internet browsers is <strong>not</strong> allowed. Only accessing the course website <a href="https://learning.hanyang.ac.kr">(https://learning.hanyang.ac.kr)</a> for uploading the final answers is allowed.</p></li>
+<li><p>To prevent academic dishonesty, students <strong>cannot</strong> leave before the exam ends.</p></li>
+<li><p>Late submissions within 10 minutes past the deadline will incur a 5-point deduction, and submissions more than 10 minutes late will receive 0 points.</p></li>
+<li><p>We will give you 0 points if over a hundred lines of your code are perfectly identical to other students.</p></li>
+<li><p>If you do not follow these rules, we will give you 0 points for this exam.</p></li>
+<li><p>In this exam, an F grade will be given if you use ChatGPT, KakaoTalk, etc.</p></li>
+<li><p>Students should write (a single) R code about answers of excercises, submit it on course website <a href="https://learning.hanyang.ac.kr">(https://learning.hanyang.ac.kr)</a>.</p>
 <ul>
 <li><a href="https://learning.hanyang.ac.kr/courses/160878">for 11295 (Fri 10:30~12:00)</a></li>
 <li><a href="https://learning.hanyang.ac.kr/courses/160879">for 12984 (Fri 13:00~14:30)</a></li>
 </ul></li>
+<li><p>If you have any questions, please raise your hand.</p></li>
+<li><p>Before leaving the classroom, please <strong>check</strong> whether your answers are uploaded well.</p></li>
+<li><p>Students <strong>must return</strong> their exam papers after the test is finished.</p></li>
 </ul>
+<p>Student Number </p>
+<p>Name </p>
+<div style="page-break-after: always;"></div>
+<!--
+R Numerical Analysis in Science and Engineering
+67쪽
+## Euler's method
+-->
+</section>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">Problems</h2>
+<p><strong>1</strong>. (10pts) Consider radioactive decay, in which the rate of decrease in the number of radioactive atoms <span class="math inline">\(N\)</span> is proportional to the number remaining <span class="math display">\[
+\frac{\Delta N}{\Delta t} = \frac{N_{t}-N_{t-1}}{t-(t-1)} =  - k N_{t-1}, \quad{} t=1,2,\ldots,
+\]</span> Let <span class="math inline">\(N_t\)</span> is the number of radioactive atoms at time <span class="math inline">\(t\)</span>. Let initial number at <span class="math inline">\(t=0\)</span>, <span class="math inline">\(N_0\)</span>, is <span class="math inline">\(100\)</span> and the constant decay rate <span class="math inline">\(k\)</span> is <span class="math inline">\(k=0.03\)</span>.</p>
+<p>Using <code>for</code> loop, compute <span class="math inline">\(N_1, \ldots, N_{100}\)</span>. Draw a scatterplot of <span class="math inline">\((1, N_1) , (2, N_2), \ldots, (100, N_{100})\)</span> with x-axis name <code>time</code> and y-axis name <code>N</code>.</p>
+<div class="cell" data-solution="true">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up initial conditions and define variables</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tmin <span class="ot">=</span> <span class="dv">0</span>; tmax <span class="ot">=</span> <span class="dv">100</span>; dt <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> (tmax <span class="sc">-</span> tmin)<span class="sc">/</span>dt <span class="sc">+</span> <span class="dv">1</span> <span class="co"># 101 time values from 0 to 100</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>time <span class="ot">=</span> <span class="fu">seq</span>(tmin, tmax, <span class="at">by =</span> dt)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>k <span class="ot">=</span> .<span class="dv">03</span> <span class="co"># Decay rate constant</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>N0 <span class="ot">=</span> <span class="dv">100</span> <span class="co"># Initial number of atoms</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> N0 <span class="co"># Initialize N</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Run for loop</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>n) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   dN <span class="ot">=</span> <span class="sc">-</span>k<span class="sc">*</span>N[i<span class="dv">-1</span>]<span class="sc">*</span>dt</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a> N[i] <span class="ot">=</span> N[i<span class="dv">-1</span>] <span class="sc">+</span> dN}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot results</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(time, N, <span class="at">type =</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exam_2024_mid_B_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!--
+\newpage
 
 
+
+# `islands` data
+
+교재 Exercises 3.1.1
+-->
+<p><strong>(2-5)</strong>. Consider the built-in <code>islands</code> data in <code>R</code>.</p>
+<p><strong>2</strong>. (2pts) Determine the number of observations in this data.</p>
+<p><strong>3</strong>. (2pts) Calculate the mean and median of this data.</p>
+<p><strong>4</strong>. (8pts) Construct a histogram, a normal QQ plot, a boxplot and a dot chart of areas within a single figure using <code>par(mfrow=c(2,2))</code>.</p>
+<p><strong>5</strong>. (3pts) Compare the QQ plot result with the plots in Figure 3.13; which one is most similar, and what does this tell you about this data set?</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Figure3.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-solution="true">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (2)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(islands)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 48</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (3)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(islands)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1252.729</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(islands)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 41</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#(4)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(islands)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(islands)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(islands)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(islands)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exam_2024_mid_B_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!--
+\newpage
+
+
+
+교재 137쪽
+R statistical computing 383
+-->
+<p><strong>6</strong>. (5pts) Given a starting value of <span class="math inline">\(2\)</span>, use a fixed-point iteration method to find a zero (to within 4-digit accuracy) of <span class="math display">\[
+x -\text{ln}(x) + \exp(-x) = x
+\]</span></p>
+<p><strong>7</strong>. (5pts) Given a starting value of <span class="math inline">\(2\)</span>, use Newton’s method to find a zero (to within 4-digit accuracy) of <span class="math display">\[
+f(x) = \text{ln}(x) - \exp(-x).
+\]</span></p>
+<!--
+\vspace{0.5cm}
+
+**7**. (5pts) Given that the root is known to lie between $0.5$ and $2$, use a bisection algorithm find the zero (within 4-digit accuracy) of
+$$
+f(x) = \text{ln}(x) - \exp(-x).
+$$
+-->
+<p><strong>8</strong>. (5pts) Let your solution of the problem <strong>7</strong> is <span class="math inline">\(x_{\text{sol}}\)</span>. Draw a curve <span class="math inline">\(\text{ln}(x) - \exp(-x)\)</span> with x range is <code>[0.5, 2.5]</code> and add a green filled triangle point to describe <span class="math inline">\((x_{\text{sol}}, \text{ln}(x_{\text{sol}}) - \exp(-x_{\text{sol}}))\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<!--
+산점도 그리기: 3점
+
+-->
+<div class="cell" data-solution="true">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#actual solution of x -log(x) + exp(-x) = x is</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#x = 1.30979958580415...</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#(6) fixed point iterations</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#starting value 2, first four digits</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(<span class="fu">abs</span>(x <span class="sc">-</span> x <span class="sc">+</span> <span class="fu">log</span>(x) <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>x)) <span class="sc">&gt;</span> <span class="fl">0.0001</span>){</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">-</span> <span class="fu">log</span>(x) <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>x)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>count <span class="co">#3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="co">#1.309715</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.309715</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#(7) Newton-raphson</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">log</span>(x) <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>x)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>tolerance <span class="ot">&lt;-</span> <span class="fl">0.0001</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (<span class="fu">abs</span>(f) <span class="sc">&gt;</span> tolerance){</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  f.prime <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>x <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>x)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">-</span> f<span class="sc">/</span>f.prime</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="fu">log</span>(x) <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>x)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>x<span class="co">#1.309709</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.309709</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#(8)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">log</span>(x)<span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>x), <span class="at">xlim=</span><span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">2.5</span>))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x, f, <span class="at">pch=</span><span class="dv">17</span>, <span class="at">col=</span><span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exam_2024_mid_B_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<!--
+이차방정식 해 구하는 함수 if문으로 만들기: 20점
+Introduction to scientific programming and simulation using R 63쪽
+-->
+<p><strong>9</strong>. (20pts) Write an R function <code>trianglearea</code>, which finds the area of a triangle. Your <code>trianglearea</code> function <strong>should</strong> match the flowchart in the following picture. Assume that input <code>x</code> is always a length-3 <code>numeric</code> vector containing <code>(a,b,c)</code>, without missing values.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/nratbig.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="math display">\[\begin{equation}
+\cos A = \frac{b^2+c^2-a^2}{2bc}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\sin A= \sqrt{1-\cos^2 A}
+\end{equation}\]</span></p>
+<!--
+\begin{equation}
+\sin A= -\sqrt{1-\cos^2 A}
+\end{equation}
+-->
+<p><span class="math display">\[\begin{equation}
+\texttt{area} = \frac{1}{2}b c \sin A
+\end{equation}\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/flowchart_2024_B.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-solution="true">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>trianglearea <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> x[<span class="dv">1</span>]; b <span class="ot">&lt;-</span> x[<span class="dv">2</span>]; c <span class="ot">&lt;-</span> x[<span class="dv">3</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(a<span class="sc">+</span>b<span class="sc">&lt;=</span>c <span class="sc">|</span> a<span class="sc">+</span>c<span class="sc">&lt;=</span>b <span class="sc">|</span> b<span class="sc">+</span>c<span class="sc">&lt;=</span>a){</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    area <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(a<span class="sc">&lt;=</span><span class="dv">0</span> <span class="sc">|</span> b<span class="sc">&lt;=</span><span class="dv">0</span> <span class="sc">|</span> c<span class="sc">&lt;=</span><span class="dv">0</span>){</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>      area <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      cosA <span class="ot">&lt;-</span> (b<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>c<span class="sc">^</span><span class="dv">2</span><span class="sc">-</span>a<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>b<span class="sc">*</span>c)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      sinA <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>cosA<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      area <span class="ot">&lt;-</span> <span class="fl">0.5</span><span class="sc">*</span>b<span class="sc">*</span>c<span class="sc">*</span>sinA</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">trianglearea</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trianglearea</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trianglearea</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fu">sqrt</span>(<span class="dv">5</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
