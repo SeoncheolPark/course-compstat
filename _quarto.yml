@@ -20,12 +20,6 @@ website:
             file: 00_practice.qmd
           - text: "Lab 01 ~ Lab 12"
             file: 01_12.qmd
-      - text: "Midterm"
-        menu:
-          - text: "Midterm Solutions Examples (11295)"
-            file: exam_2024_mid_A.Rmd
-          - text: "Midterm Solutions Examples (12984)"
-            file: exam_2024_mid_B.Rmd
     right: 
       - icon: house-door-fill
         href: https://seoncheolpark.github.io
