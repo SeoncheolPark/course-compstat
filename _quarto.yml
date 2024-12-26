@@ -20,12 +20,6 @@ website:
             file: 00_practice.qmd
           - text: "Lab 01 ~ Lab 12"
             file: 01_12.qmd
-      - text: "Final"
-        menu:
-          - text: "Class 11295"
-            file: exam_2024_fin_AA_solution.html
-          - text: "Class 12984"
-            file: exam_2024_fin_BB_solution.html
     right: 
       - icon: house-door-fill
         href: https://seoncheolpark.github.io
