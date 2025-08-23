@@ -4,7 +4,7 @@ title: "Statistical Methods for Data Analysis (2025 Fall, Hanyang University)"
 
 ## About this course
 
--   Course name: BIG3003 (11295/12984), Statistical Methods for Data Analysis
+-   Course name: MAT2033 (11778/13018), Statistical Methods for Data Analysis
 
 -   Instructor: [Seoncheol Park](https://seoncheolpark.github.io)
 
