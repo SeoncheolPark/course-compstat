@@ -11,8 +11,8 @@ filters:
 
 -   Students should write (a single) R code about answers of exercises, submit it on course website.
 
-    -   [for 11295 (Fri 10:30\~12:00)](https://learning.hanyang.ac.kr/courses/160878)
-    -   [for 12984 (Fri 13:00\~14:30)](https://learning.hanyang.ac.kr/courses/160879)
+    -   [For 13018 (Fri 10:30\~12:00)](https://learning.hanyang.ac.kr/courses/188066)
+    -   [For 11778 (Fri 13:00\~14:30)](https://learning.hanyang.ac.kr/courses/188065)
 
 -   Please **check** whether your answers are uploaded well.
 
@@ -64,6 +64,7 @@ format:
 pdf-engine: xelatex
 -->
 ```
+
 \newpage
 
 \vspace{5cm}
@@ -77,6 +78,7 @@ Welcome to the world of statistical programming!
 We will start in this chapter by giving you an idea of what statistical programming is all about.
 -->
 ```
+
 -   How to download and install [R](https://cran.r-project.org)
 
 -   How to download and install [RStudio](https://posit.co/download/rstudio-desktop/), an **integrated development environment (IDE)**
@@ -127,6 +129,7 @@ knitr::include_graphics("images/intro-Rstudiopane.png")
 *Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
 -->
 ```
+
 **2**. Now write an R function `add` that adds any two numbers and then call it:
 
 ```{webr-r}
@@ -160,6 +163,7 @@ professorinfo
 *Here's an exercise where the chunk is pre-evaluated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
 -->
 ```
+
 **4**. Modify the following code to limit the number of rows printed to 5:
 
 ```{webr-r}

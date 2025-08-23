@@ -11,7 +11,7 @@
     "href": "00_practice.html",
     "title": "Lab 00: Install R and R Studio",
     "section": "",
-    "text": "Students should solve exercises provided in the in-class exercise session on every Friday.\nStudents should write (a single) R code about answers of exercises, submit it on course website.\n\nfor 11295 (Fri 10:30~12:00)\nfor 12984 (Fri 13:00~14:30)\n\nPlease check whether your answers are uploaded well.\nWe will not give any scores for all late submission. Please keep the time.\nYou may leave early after submitting your answers on the course website."
+    "text": "Students should solve exercises provided in the in-class exercise session on every Friday.\nStudents should write (a single) R code about answers of exercises, submit it on course website.\n\nFor 13018 (Fri 10:30~12:00)\nFor 11778 (Fri 13:00~14:30)\n\nPlease check whether your answers are uploaded well.\nWe will not give any scores for all late submission. Please keep the time.\nYou may leave early after submitting your answers on the course website."
   },
   {
     "objectID": "00_practice.html#introduction",
@@ -44,16 +44,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Statistical Computing (2024 Fall, Hanyang University)",
+    "title": "Statistical Methods for Data Analysis (2025 Fall, Hanyang University)",
     "section": "",
-    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
+    "text": "Course name: BIG3003 (11295/12984), Statistical Methods for Data Analysis\nInstructor: Seoncheol Park\nTA: Minseok Choi\nLanguage: English\nSchedule:\n\nFor 11778: TUE 10:30-12:00, FRI 13:00-14:00 (Room 222, Building 507)\nFor 13018: TUE 13:00-14:30, FRI 10:30-12:00\n\nTextbook:\n\nA First Course in Statistical Programming with R\nR 통계 프로그래밍 교과서\n\nGrading:\n\nClass attendance (10%)\nIn-class exercises (30%)\nMidterm (30%)\nFinal (30%)"
   },
   {
     "objectID": "index.html#about-this-course",
     "href": "index.html#about-this-course",
-    "title": "Statistical Computing (2024 Fall, Hanyang University)",
+    "title": "Statistical Methods for Data Analysis (2025 Fall, Hanyang University)",
     "section": "",
-    "text": "Course name: MAT2021 (11295/12984), Statistical computing\nInstructor: Seoncheol Park\nTA: Minseo Kim\nLanguage: English\nSchedule:\n\nMAT2021 (11295): TUE 13:00-14:30 (Room 205, Building 507), FRI 10:30-12:00 (Room 222, Building 507)\nMAT2021 (12984): TUE 10:30-12:00 (Room 205, Building 507), FRI 13:00-14:30 (Room 222, Building 507)\nTuesday: Lecture\nFriday: In-class exercise session\n\nTextbook:\n\nA First Course in Statistical Programming with R, 3rd Edition,\nA First Course in Statistical Programming with R, 2nd Edition, and\nits Korean translated version\nLecture notes will be given during this semester.\n\nGrading:\n\nClass attendance (10%): four absences without any reason are allowed. After that, you will get a minus point for each absence. According to the university rule, students must attend at least 2/3 of classes.\nIn-class exercise (30%): On every Friday (except the first class, midterm and final), students will receive statistical programming problems, should solve problems and submit them on the course website (for 11628 or for 13300). Late submissions are not allowed. For public holidays, take-home homework assignments will be given instead.\nMidterm (30%) and Final: Details will be given soon."
+    "text": "Course name: BIG3003 (11295/12984), Statistical Methods for Data Analysis\nInstructor: Seoncheol Park\nTA: Minseok Choi\nLanguage: English\nSchedule:\n\nFor 11778: TUE 10:30-12:00, FRI 13:00-14:00 (Room 222, Building 507)\nFor 13018: TUE 13:00-14:30, FRI 10:30-12:00\n\nTextbook:\n\nA First Course in Statistical Programming with R\nR 통계 프로그래밍 교과서\n\nGrading:\n\nClass attendance (10%)\nIn-class exercises (30%)\nMidterm (30%)\nFinal (30%)"
+  },
+  {
+    "objectID": "index.html#notice-for-students-who-have-already-taken-statistical-computing-mat2021",
+    "href": "index.html#notice-for-students-who-have-already-taken-statistical-computing-mat2021",
+    "title": "Statistical Methods for Data Analysis (2025 Fall, Hanyang University)",
+    "section": "Notice for Students Who Have Already Taken Statistical Computing (MAT2021)",
+    "text": "Notice for Students Who Have Already Taken Statistical Computing (MAT2021)\n\nThe course Statistical Methods for Data Analysis has been newly introduced in 2025 to replace Statistical Computing.\n\nHowever, due to an administrative oversight, it has not yet been designated as a replacement course.\n\nAs a result, students who have previously taken Statistical Computing may also enroll in Statistical Methods for Data Analysis this year (2025).\n\nAt present, this issue cannot be resolved, so students who completed Statistical Computing cannot retake it as Statistical Methods for Data Analysis in 2025. + From 2026, however, it will be officially designated as the replacement course.\n\n\nStudents who have taken Statistical Computing are advised to note that the contents of Statistical Methods for Data Analysis are largely similar to those of Statistical Computing when registering for the course.\n\nFor fairness with other students, those who have already taken Statistical Computing will be graded separately from those who have not.\n\n\n(Korean translated ver.)\n\nStatistical Methods for Data Analysis 과목은 Statistical Computing을 대체하기 위해 2025년도부터 신설한 과목입니다.\n그러나 행정적 실수로 인해 대체과목으로 지정이 안되어 있어, Statistical Computing 과목을 들은 학생도 올해는 Statistical Methods for Data Analysis 과목을 수강할 수 있습니다. 현재 이를 해결할 수는 없어 Statistical Computing 과목을 들은 학생이 올해 Statistical Methods for Data Analysis 과목으로 재수강할 수는 없으나, 2026년부터는 대체과목으로 지정할 예정입니다.\nStatistical Computing 과목을 들은 학생들은 과목 Statistical Methods for Data Analysis 과목 컨텐츠가 Statistical Computing 과목과 유사함에 유의하여 수강신청 하시기 바랍니다.\n다른 학생들과의 형평성을 위해 Statistical Computing 과목을 들은 학생들은 그렇지 않은 학생들과 분리하여 별도로 grading을 할 것입니다."
   },
   {
     "objectID": "about.html",
