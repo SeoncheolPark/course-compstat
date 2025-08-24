@@ -13,7 +13,7 @@ title: "Statistical Methods for Data Analysis (2025 Fall, Hanyang University)"
 -   Language: English
 
 -   Schedule: 
-    -   For 11778: TUE 10:30-12:00, FRI 13:00-14:00 (Room 222, Building 507)
+    -   For 11778: TUE 10:30-12:00, FRI 13:00-14:30 (Room 222, Building 507)
     -   For 13018: TUE 13:00-14:30, FRI 10:30-12:00
 
 -   Textbook:
