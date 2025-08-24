@@ -33,7 +33,8 @@ title: "Statistical Methods for Data Analysis (2025 Fall, Hanyang University)"
 - The course **`Statistical Methods for Data Analysis`** has been **newly introduced in 2025** to replace **`Statistical Computing`**.  
 - However, due to an **administrative oversight**, it has not yet been designated as a replacement course.  
   + As a result, students who have previously taken **`Statistical Computing`** may also enroll in **`Statistical Methods for Data Analysis`** **this year (2025)**.  
-  + At present, this issue cannot be resolved, so students who completed **`Statistical Computing`** **cannot retake** it as **`Statistical Methods for Data Analysis`** in 2025.   + From **2026**, however, it will be officially designated as the replacement course.  
+  + At present, this issue cannot be resolved, so students who completed **`Statistical Computing`** **cannot retake** it as **`Statistical Methods for Data Analysis`** in 2025.
+  + From **2026**, however, it will be officially designated as the replacement course.  
 - Students who have taken **`Statistical Computing`** are advised to note that the contents of **`Statistical Methods for Data Analysis`** are **largely similar** to those of **`Statistical Computing`** when registering for the course.  
 - For **fairness with other students**, those who have already taken **`Statistical Computing`** will be **graded separately** from those who have not.  
 
