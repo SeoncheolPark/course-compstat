@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Statistical Computing"
+  title: "Statistical Methods for Data Analysis"
   navbar:
     collapse: true
     collapse-below: sm
