@@ -7,6 +7,7 @@ filters:
   - webr
 ---
 
-- Lab 01 ~ Lab 12 will be uploaded to the [Hanyang University LMS](https://learning.hanyang.ac.kr):
-    + [for 11295 (Fri 10:30~12:00)](https://learning.hanyang.ac.kr/courses/160878)
-    + [for 12984 (Fri 13:00~14:30)](https://learning.hanyang.ac.kr/courses/160879)
+-   Lab 01 \~ Lab 12 will be uploaded to the [Hanyang University LMS](https://learning.hanyang.ac.kr):
+    -   [For 13018 (Fri 10:30\~12:00)](https://learning.hanyang.ac.kr/courses/188066)
+    -   [For 11778 (Fri 13:00\~14:30)](https://learning.hanyang.ac.kr/courses/188065)
+
